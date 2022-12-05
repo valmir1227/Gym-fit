@@ -6,6 +6,8 @@ export const Head = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 2;
 
   nav {
     width: 100%;

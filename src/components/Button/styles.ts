@@ -23,6 +23,7 @@ export const Button = styled.button<ButtonProps>`
   ${(props) =>
     props.variant === "primary" &&
     css`
+      border: none;
       &:hover {
         color: #9258f9;
       }

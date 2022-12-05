@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const Main = styled.main`
+export const HomeContainer = styled.section`
   width: 100vw;
   height: 90vh;
   background-image: url(http://netizensstore.com/gymfit_theme/html/multipage_6/assets/img/main-page/header-bg-img.png);
@@ -22,7 +22,6 @@ export const Main = styled.main`
       line-height: 5.4rem;
       word-break: break-all;
       background: rgb(151, 87, 246);
-
       background: linear-gradient(
         180deg,
         rgba(151, 87, 246, 1) 0%,
