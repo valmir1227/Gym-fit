@@ -1,6 +1,6 @@
 import Head from "next/head";
 import GlobalButton from "../components/Button/Button";
-import { HomeContainer } from "./styles";
+import HomeContainer from "./styles";
 import About from "../container/About/About";
 export default function Home() {
   return (

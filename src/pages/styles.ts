@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../styles/devices";
-export const HomeContainer = styled.section`
+
+const HomeContainer = styled.section`
   width: 100vw;
   height: 90vh;
   background-image: url(http://netizensstore.com/gymfit_theme/html/multipage_6/assets/img/main-page/header-bg-img.png);
@@ -28,10 +29,11 @@ export const HomeContainer = styled.section`
         rgba(221, 89, 190, 1) 76%,
         rgba(232, 120, 156, 1) 100%
       );
-      ::-webkit-background-clip {
-        -webkit-background-clip: text;
-        background-clip: initial;
-      }
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
       ::-webkit-text-fill-color {
         -webkit-text-fill-color: transparent;
       }
@@ -89,3 +91,5 @@ export const HomeContainer = styled.section`
     }
   }
 `;
+
+export default HomeContainer;
