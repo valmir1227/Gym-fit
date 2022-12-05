@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/devices";
 export const HomeContainer = styled.section`
   width: 100vw;
   height: 90vh;
@@ -8,11 +9,10 @@ export const HomeContainer = styled.section`
   background-repeat: no-repeat;
 
   div {
-    width: 700px;
+    width: 46.6rem;
     height: auto;
-    padding-right: 7rem;
     position: absolute;
-    right: 0;
+
     top: 50%;
     transform: translateY(-40%);
     text-align: left;
@@ -35,7 +35,50 @@ export const HomeContainer = styled.section`
     p {
       color: #fff;
       margin: 1rem 0;
-      font-size: 0.9rem;
+    }
+  }
+
+  @media ${device.mobileS} {
+    padding: 1rem;
+    background-position: left;
+
+    div {
+      padding: 1rem;
+      width: 100%;
+
+      h1 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+      }
+    }
+  }
+
+  @media ${device.tablet} {
+    div {
+      width: 40rem;
+      padding: 0 3rem;
+      left: 0;
+    }
+  }
+
+  @media ${device.laptop} {
+    padding: 3rem 1rem;
+    div {
+      left: 40%;
+
+      h1 {
+        font-size: 4.5rem;
+        line-height: 5.4rem;
+      }
+    }
+  }
+
+  @media ${device.laptopL} {
+    padding: 6rem 12rem;
+
+    div {
+      left: 50%;
+      width: 46.6rem;
     }
   }
 `;
