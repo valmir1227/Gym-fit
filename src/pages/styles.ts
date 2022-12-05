@@ -28,8 +28,13 @@ export const HomeContainer = styled.section`
         rgba(221, 89, 190, 1) 76%,
         rgba(232, 120, 156, 1) 100%
       );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      ::-webkit-background-clip {
+        -webkit-background-clip: text;
+        background-clip: initial;
+      }
+      ::-webkit-text-fill-color {
+        -webkit-text-fill-color: transparent;
+      }
     }
 
     p {
@@ -64,6 +69,8 @@ export const HomeContainer = styled.section`
   @media ${device.laptop} {
     padding: 3rem 1rem;
     div {
+      width: 46.6rem;
+
       left: 40%;
 
       h1 {
