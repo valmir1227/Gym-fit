@@ -14,7 +14,9 @@ export default function Trainers() {
         <Title textPrimary="Our" textSecondary="Traienrs" />
         <p>
           Quisque ullamcorper ex non leo blandit porta. Duis purus sapien,
-          blandit non sem quis, mollis vehicula sapien.
+          blandit non sem quis,
+          <br />
+          mollis vehicula sapien.
         </p>
       </div>
 
@@ -29,22 +31,63 @@ export default function Trainers() {
       >
         <Cards>
           <SwiperSlide>
-            <Card />
+            <Card
+              name="Jhon Doe"
+              role="Cardio Expert"
+              facebook="valmir.almeida.5454"
+              instagram="valmiralmeidadev"
+              tiktok="/"
+            />
           </SwiperSlide>
+
           <SwiperSlide>
-            <Card />
+            <Card
+              name="Jhon Doe"
+              role="Cardio Expert"
+              facebook="valmir.almeida.5454"
+              instagram="valmiralmeidadev"
+              tiktok="/"
+            />
           </SwiperSlide>
+
           <SwiperSlide>
-            <Card />
+            <Card
+              name="Jhon Doe"
+              role="Cardio Expert"
+              facebook="valmir.almeida.5454"
+              instagram="valmiralmeidadev"
+              tiktok="/"
+            />
           </SwiperSlide>
+
           <SwiperSlide>
-            <Card />
+            <Card
+              name="Jhon Doe"
+              role="Cardio Expert"
+              facebook="valmir.almeida.5454"
+              instagram="valmiralmeidadev"
+              tiktok="/"
+            />
           </SwiperSlide>
+
           <SwiperSlide>
-            <Card />
+            <Card
+              name="Jhon Doe"
+              role="Cardio Expert"
+              facebook="valmir.almeida.5454"
+              instagram="valmiralmeidadev"
+              tiktok="/"
+            />
           </SwiperSlide>
+
           <SwiperSlide>
-            <Card />
+            <Card
+              name="Jhon Doe"
+              role="Cardio Expert"
+              facebook="valmir.almeida.5454"
+              instagram="valmiralmeidadev"
+              tiktok="/"
+            />
           </SwiperSlide>
         </Cards>
       </Swiper>

@@ -6,10 +6,10 @@ export const Container = styled.section`
   padding: 0 7rem;
   div {
     text-align: center;
+    margin-bottom: 3rem;
 
     p {
-      color: #616783;
-      margin-bottom: 3rem;
+      color: #616797;
     }
   }
 `;

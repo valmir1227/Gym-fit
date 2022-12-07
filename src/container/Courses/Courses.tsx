@@ -13,10 +13,10 @@ export default function Courses() {
   return (
     <Container>
       <div>
-        <Title textPrimary="Our" textSecondary="Courses"/>
+        <Title textPrimary="Our" textSecondary="Courses" />
         <p>
           Quisque ullamcorper ex non leo blandit porta. Duis purus sapien,
-          blandit non sem quis, mollis vehicula sapien.
+          blandit non sem quis, <br /> mollis vehicula sapien.
         </p>
       </div>
       <Cards>
