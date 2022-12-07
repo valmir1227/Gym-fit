@@ -7,17 +7,6 @@ import { Head } from "./styles";
 import { useState, useEffect } from "react";
 
 export default function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      console.log(window.scrollY);
-      setScrollPosition(window.scrollY);
-    });
-  }, [scrollPosition]);
-
-  console.log(scrollPosition);
-  
   return (
     <Head>
       <Image src={Logo} alt="" />

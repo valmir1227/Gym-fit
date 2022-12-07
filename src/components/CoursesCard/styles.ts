@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { device } from "../../../styles/devices";
 
 export const Container = styled.div`
-  width: 20.3rem;
+  width: 25%;
   height: 18rem;
   display: flex;
   flex-direction: column;
@@ -9,8 +10,6 @@ export const Container = styled.div`
   justify-content: center;
   border-radius: 10px;
   text-align: center;
-  cursor: pointer;
-  transition: all 1s;
 
   &:hover {
     background: rgb(232, 120, 155);
@@ -27,6 +26,19 @@ export const Container = styled.div`
       color: #fff;
     }
   }
+
+  @media ${device.mobileS} {
+    width: 100%;
+  }
+
+  @media ${device.tablet} {
+    width: 33%;
+  }
+
+  @media ${device.laptop} {
+    width: 25%;
+  }
+
 `;
 
 export const Text = styled.div`

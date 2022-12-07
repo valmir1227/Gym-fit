@@ -6,7 +6,6 @@ import MenuMobile from "../components/MenuMobile/MenuMobile";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Header />
       <Component {...pageProps} />
       <GlobalStyle />
     </>

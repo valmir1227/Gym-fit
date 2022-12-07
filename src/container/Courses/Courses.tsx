@@ -6,6 +6,7 @@ import courses3 from "../../../public/images/courses-img-3.png";
 import courses4 from "../../../public/images/courses-img-4.png";
 import courses5 from "../../../public/images/courses-img-5.png";
 import courses6 from "../../../public/images/courses-img-6.png";
+import GlobalButton from "../../components/Button/Button";
 
 export default function Courses() {
   return (
@@ -56,6 +57,7 @@ export default function Courses() {
           title="Morbi commodo sapien at risus aliquam dapibus. Quisque ullamcorper ex non leo blandit porta."
         />
       </Cards>
+      <GlobalButton href="/" text="View More" variant="primary" />
     </Container>
   );
 }

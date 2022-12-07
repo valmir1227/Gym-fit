@@ -1,15 +1,20 @@
 import styled from "styled-components";
+import { device } from "../../../styles/devices";
 
 export const Container = styled.section`
   width: 100vw;
-  height: 100vh;
-  padding: 0 3rem;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
     width: fit-content;
     position: relative;
     font-size: 2.4rem;
-    margin: 0 auto;
+    margin: 3rem auto;
     color: #322b40;
 
     span {
@@ -40,10 +45,17 @@ export const Container = styled.section`
     color: #616783;
     margin: 2rem;
   }
+
+  a {
+    margin-top: 2rem;
+  }
+
+  @media ${device.mobileS} {
+    padding: 1rem;
+  }
 `;
 
 export const Cards = styled.div`
-  min-width: 60rem;
   gap: 1rem;
   height: 100%;
   display: flex;

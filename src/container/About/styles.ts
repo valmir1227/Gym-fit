@@ -3,7 +3,7 @@ import { device } from "../../../styles/devices";
 
 export const AboutContainer = styled.section`
   width: 100vw;
-  height: 80vh;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
