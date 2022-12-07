@@ -2,24 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/images/logo.png";
 import GlobalButton from "../Button/Button";
-import { Head } from "./styles";
+import { Container } from "./styles";
 
-import { useState, useEffect } from "react";
+import { AiOutlineAlignLeft } from "react-icons/ai";
 
-export default function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      console.log(window.scrollY);
-      setScrollPosition(window.scrollY);
-    });
-  }, [scrollPosition]);
-
-  console.log(scrollPosition);
-  
+export default function MenuMobile() {
   return (
-    <Head>
+    <Container>
       <Image src={Logo} alt="" />
       <nav>
         <Link href="/">
@@ -41,8 +30,10 @@ export default function Header() {
         <Link href="/">
           <li>Pages</li>
         </Link>
-        <GlobalButton variant="primary" href="/about" text="Get in Toutch" />
+        <GlobalButton variant="primary" 
+        href="/about" text="Get in Toutch" />
       </nav>
-    </Head>
+        <AiOutlineAlignLeft />
+    </Container>
   );
 }

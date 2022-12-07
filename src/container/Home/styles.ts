@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { device } from "../../styles/devices";
+import { device } from "../../../styles/devices";
 
-const HomeContainer = styled.section`
+const Container = styled.section`
   width: 100vw;
   height: 90vh;
   background-image: url(http://netizensstore.com/gymfit_theme/html/multipage_6/assets/img/main-page/header-bg-img.png);
@@ -92,4 +92,4 @@ const HomeContainer = styled.section`
   }
 `;
 
-export default HomeContainer;
+export default Container;

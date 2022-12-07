@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { device } from "../../../styles/devices";
 
 export const Head = styled.header`
   width: 100vw;
-  padding: 2rem 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute;
   z-index: 2;
 
   nav {
@@ -31,5 +31,22 @@ export const Head = styled.header`
         color: #9258f9;
       }
     }
+  }
+
+  @media ${device.mobileS} {
+    padding: 1rem;
+  }
+
+  @media ${device.tablet} {
+    padding: 1rem 3rem;
+  }
+
+  @media ${device.laptop} {
+    padding: 3rem 4rem;
+  }
+
+  ///aqui
+  @media ${device.laptopL} {
+    padding: 6rem 12rem;
   }
 `;
