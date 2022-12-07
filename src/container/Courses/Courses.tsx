@@ -7,14 +7,13 @@ import courses4 from "../../../public/images/courses-img-4.png";
 import courses5 from "../../../public/images/courses-img-5.png";
 import courses6 from "../../../public/images/courses-img-6.png";
 import GlobalButton from "../../components/Button/Button";
+import Title from "../../components/Title/Title";
 
 export default function Courses() {
   return (
     <Container>
       <div>
-        <h1>
-          OUR <span>COURSES</span>
-        </h1>
+        <Title textPrimary="Our" textSecondary="Courses"/>
         <p>
           Quisque ullamcorper ex non leo blandit porta. Duis purus sapien,
           blandit non sem quis, mollis vehicula sapien.
