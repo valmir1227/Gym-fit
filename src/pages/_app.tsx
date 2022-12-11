@@ -4,8 +4,11 @@ import Header from "../components/Header/Header";
 import MenuMobile from "../components/MenuMobile/MenuMobile";
 
 export default function App({ Component, pageProps }: AppProps) {
+  let screenWidth = window.screen.width;
+
   return (
     <>
+      {screenWidth > 600 ? <Header /> : <MenuMobile />}
       <Component {...pageProps} />
       <GlobalStyle />
     </>

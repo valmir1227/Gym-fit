@@ -7,6 +7,8 @@ import Timetable from "../container/Timetable/Timetable";
 import Trainers from "../container/Trainers/Trainers";
 
 export default function Index() {
+
+
   return (
     <>
       <Head>
