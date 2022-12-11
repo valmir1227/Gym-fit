@@ -1,6 +1,7 @@
 import Head from "next/head";
 import About from "../container/About/About";
 import Courses from "../container/Courses/Courses";
+import Explore from "../container/Explore/Explore";
 import Home from "../container/Home/Home";
 import Timetable from "../container/Timetable/Timetable";
 import Trainers from "../container/Trainers/Trainers";
@@ -16,6 +17,7 @@ export default function Index() {
       <Courses />
       <Trainers />
       <Timetable />
+      <Explore />
     </>
   );
 }

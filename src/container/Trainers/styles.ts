@@ -2,12 +2,10 @@ import styled from "styled-components";
 import { device } from "../../../styles/devices";
 
 export const Container = styled.section`
-  width: 100vw;
-  height: 100vh;
-  padding: 0 7rem ;
+  padding: 0 7rem;
   div {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     p {
       color: #616797;
@@ -19,14 +17,11 @@ export const Container = styled.section`
   }
 
   @media ${device.tablet} {
-    padding: 0 3rem ;
+    padding: 0 3rem;
   }
 
   @media ${device.laptop} {
-    margin-bottom: 12rem;
   }
-
-
 `;
 
 export const Cards = styled.div`

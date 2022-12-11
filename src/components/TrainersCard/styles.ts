@@ -2,13 +2,11 @@ import styled from "styled-components";
 import { device } from "../../../styles/devices";
 
 export const Container = styled.div`
-  width: 100%;
   height: 27rem;
   border-radius: 10px;
   transition: all 0.3s ease;
-  position: relative;
+  position: sticky;
   z-index: 1;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
   &:hover h4 {
     display: none;
@@ -17,14 +15,13 @@ export const Container = styled.div`
   &:hover > div {
     visibility: visible;
   }
-
 `;
 
 export const Text = styled.div`
   position: absolute;
   visibility: hidden;
-  
-  width: 100%;
+
+  width: 20rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -80,10 +77,12 @@ export const SocialMedia = styled.div`
 export const Profile = styled.div`
   position: relative;
 
-  width: 100%;
+  width: 20rem;
   height: 100%;
   z-index: -1;
   border-radius: 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
   div {
     width: 100%;

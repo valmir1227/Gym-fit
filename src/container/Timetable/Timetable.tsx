@@ -1,26 +1,6 @@
-import Image from "next/image";
-import styled from "styled-components";
 import Title from "../../components/Title/Title";
 import TimeTableCard from "../../components/TimetableCard/Card";
-
-export const Container = styled.section`
-  width: 100vw;
-  height: 100vh;
-  padding: 0 7rem;
-`;
-
-export const Text = styled.div`
-  text-align: center;
-  color: #616797;
-`;
-
-export const CardConTainer = styled.div`
-  width: 100%;
-  margin-top: 3rem;
-
-  display: flex;
-  flex-wrap: wrap;
-`;
+import { CardConTainer, Container, Text } from "./styles";
 
 export default function Timetable() {
   return (
@@ -43,8 +23,6 @@ export default function Timetable() {
         <TimeTableCard />
         <TimeTableCard />
         <TimeTableCard />
-
-
       </CardConTainer>
     </Container>
   );
