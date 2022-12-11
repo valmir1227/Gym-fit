@@ -12,6 +12,7 @@ interface CardProps {
   facebook: string;
   tiktok: string;
   role: string;
+  image: string;
 }
 
 export default function Card({
@@ -20,6 +21,7 @@ export default function Card({
   facebook,
   tiktok,
   role,
+  image,
 }: CardProps) {
   return (
     <Container>

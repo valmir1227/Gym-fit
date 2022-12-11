@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { device } from "../../../styles/devices";
 
 export const Container = styled.div`
-  width: 33%;
+  width: 100%;
   height: 27rem;
   border-radius: 10px;
-  background-color: #000000a3;
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
@@ -17,29 +16,14 @@ export const Container = styled.div`
 
   &:hover > div {
     visibility: visible;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background: rgb(232, 120, 155);
-    background: linear-gradient(
-      180deg,
-      rgba(232, 120, 155, 0.7) 36%,
-      rgba(147, 88, 248, 0.7) 100%
-    );
   }
 
-  @media ${device.mobileS} {
-    width: 100%;
-  }
 `;
 
 export const Text = styled.div`
   position: absolute;
   visibility: hidden;
+  
   width: 100%;
   height: 100%;
   display: flex;
@@ -104,10 +88,12 @@ export const Profile = styled.div`
   div {
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 
     img {
       width: 100%;
       height: 100%;
+      border-radius: 10px;
     }
   }
 

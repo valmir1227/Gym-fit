@@ -21,8 +21,8 @@ export default function Trainers() {
       </div>
 
       <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
+        spaceBetween={10}
+        slidesPerView={"auto"}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -37,6 +37,7 @@ export default function Trainers() {
               facebook="valmir.almeida.5454"
               instagram="valmiralmeidadev"
               tiktok="/"
+              image=""
             />
           </SwiperSlide>
 
@@ -47,6 +48,7 @@ export default function Trainers() {
               facebook="valmir.almeida.5454"
               instagram="valmiralmeidadev"
               tiktok="/"
+              image=""
             />
           </SwiperSlide>
 
@@ -57,6 +59,7 @@ export default function Trainers() {
               facebook="valmir.almeida.5454"
               instagram="valmiralmeidadev"
               tiktok="/"
+              image=""
             />
           </SwiperSlide>
 
@@ -67,6 +70,7 @@ export default function Trainers() {
               facebook="valmir.almeida.5454"
               instagram="valmiralmeidadev"
               tiktok="/"
+              image=""
             />
           </SwiperSlide>
 
@@ -77,6 +81,7 @@ export default function Trainers() {
               facebook="valmir.almeida.5454"
               instagram="valmiralmeidadev"
               tiktok="/"
+              image=""
             />
           </SwiperSlide>
 
@@ -87,6 +92,7 @@ export default function Trainers() {
               facebook="valmir.almeida.5454"
               instagram="valmiralmeidadev"
               tiktok="/"
+              image=""
             />
           </SwiperSlide>
         </Cards>
