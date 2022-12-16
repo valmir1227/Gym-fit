@@ -1,15 +1,18 @@
-import styled from "styled-components"
-
-export const Container = styled.section`
-    width: 100vw;
-    height: 20rem;
-    background: rebeccapurple;
-
-`
-
+import { Container } from "./styles";
+import { AiFillPlayCircle } from "react-icons/ai";
+import Link from "next/link";
 
 export default function Explore() {
   return (
-    <Container>Explore</Container>
-  )
+    <Container>
+      <div>
+        <h1>Explore GymFit</h1>
+        <Link href="/" target="_blank">
+          <AiFillPlayCircle size="100px" />
+        </Link>
+
+        <p>Watch Now</p>
+      </div>
+    </Container>
+  );
 }

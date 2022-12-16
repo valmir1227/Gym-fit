@@ -1,13 +1,12 @@
 import Image from "next/image";
-import styled from "styled-components";
-import yoga from "../../../public/images/yoga.png";
+import yoga from "../../assets/yoga.png";
 import { Card } from "./styles";
 
 export default function TimeTableCard() {
   return (
     <Card>
       <div>
-        <Image src={yoga} alt="" />
+        <Image src={yoga} priority={true} alt="" />
       </div>
       <p>06AM-08AM</p>
 

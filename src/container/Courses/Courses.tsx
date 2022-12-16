@@ -1,11 +1,11 @@
 import React from "react";
 import Card from "../../components/CoursesCard/Card";
 import { Cards, Container } from "./styles";
-import kettlebells from "../../../public/images/kettlebells.png";
-import courses3 from "../../../public/images/courses-img-3.png";
-import courses4 from "../../../public/images/courses-img-4.png";
-import courses5 from "../../../public/images/courses-img-5.png";
-import courses6 from "../../../public/images/courses-img-6.png";
+import kettlebells from "../../assets/kettlebells.png";
+import courses3 from "../../assets/courses-img-3.png";
+import courses4 from "../../assets/courses-img-4.png";
+import courses5 from "../../assets/courses-img-5.png";
+import courses6 from "../../assets/courses-img-6.png";
 import GlobalButton from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
 

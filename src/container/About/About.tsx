@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { AboutContainer, ImageContainer, Text } from "./styles";
 import GlobalButton from "../../components/Button/Button";
-import aboutImg from "../../../public/images/about-img.png";
+import aboutImg from "../../assets/about-img.png";
 
 export default function About() {
   return (

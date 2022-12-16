@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { device } from "../../../styles/devices";
+import HeaderImage from "../../assets/header-bg-img.png";
 
 const Container = styled.section`
   width: 100vw;
   height: 90vh;
-  background-image: url(http://netizensstore.com/gymfit_theme/html/multipage_6/assets/img/main-page/header-bg-img.png);
+  background-image: url(${HeaderImage.src});
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;

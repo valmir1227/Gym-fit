@@ -3,11 +3,12 @@ import { device } from "../../../styles/devices";
 
 export const Container = styled.section`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+
   padding: 0 7rem;
 
   @media ${device.mobileS} {
-    padding: 0 1rem;
+    padding: 1rem;
   }
 `;
 

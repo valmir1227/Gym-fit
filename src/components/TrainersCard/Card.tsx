@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import facebookImg from "../../../public/images/facebook.png";
-import instagramImg from "../../../public/images/instagram.png";
-import tikTokImg from "../../../public/images/tik-tok.png";
-import trainer2 from "../../../public/images/trainer2.png";
+import facebookImg from "../../assets/facebook.png";
+import instagramImg from "../../assets/instagram.png";
+import tikTokImg from "../../assets/tik-tok.png";
+import trainer2 from "../../assets/trainer2.png";
 import { Container, Profile, SocialMedia, Text } from "./styles";
 
 interface CardProps {
@@ -41,7 +41,7 @@ export default function Card({
             <Image src={facebookImg} alt="logo facebook" />
           </Link>
 
-          <Link href={`https://tiktok.com/${tiktok}`} target="_blank">
+          <Link href={""} target="_blank">
             <Image src={tikTokImg} alt="logo tiktok" />
           </Link>
         </SocialMedia>
