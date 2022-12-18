@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { device } from "../../../styles/devices";
 
+import trainer2 from "../../assets/trainer2.png";
+
 export const Container = styled.div`
+  width: 20rem;
   height: 27rem;
   border-radius: 10px;
   transition: all 0.3s ease;

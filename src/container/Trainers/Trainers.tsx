@@ -21,8 +21,7 @@ export default function Trainers() {
       </div>
       <>
         <Swiper
-          spaceBetween={30}
-          slidesPerView={3}
+          slidesPerView={"auto"}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,

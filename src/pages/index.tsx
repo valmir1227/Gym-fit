@@ -1,3 +1,4 @@
+import Blog from "container/Blog/Blog";
 import Head from "next/head";
 import About from "../container/About/About";
 import Courses from "../container/Courses/Courses";
@@ -7,8 +8,6 @@ import Timetable from "../container/Timetable/Timetable";
 import Trainers from "../container/Trainers/Trainers";
 
 export default function Index() {
-
-
   return (
     <>
       <Head>
@@ -20,6 +19,7 @@ export default function Index() {
       <Trainers />
       <Timetable />
       <Explore />
+      <Blog />
     </>
   );
 }

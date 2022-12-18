@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { device } from "../../../styles/devices";
 
 export const Container = styled.section`
+  width: 100%;
   padding: 0 7rem;
   div {
     text-align: center;
@@ -25,7 +26,8 @@ export const Container = styled.section`
 `;
 
 export const Cards = styled.div`
-  width: 100%;
+  width: 100vw;
+  height: auto;
 
   display: flex;
   justify-content: center;
