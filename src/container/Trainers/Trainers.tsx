@@ -3,10 +3,6 @@ import Title from "../../components/Title/Title";
 import Card from "../../components/TrainersCard/Card";
 import { Cards, Container } from "./styles";
 
-import { Autoplay, Pagination, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-
 export default function Trainers() {
   return (
     <Container>
@@ -19,78 +15,53 @@ export default function Trainers() {
           mollis vehicula sapien.
         </p>
       </div>
-      <>
-        <Swiper
-          slidesPerView={"auto"}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          <Cards>
-            <SwiperSlide>
-              <Card
-                name="Jhon Doe"
-                role="Cardio Expert"
-                facebook="valmir.almeida.5454"
-                instagram="valmiralmeidadev"
-                tiktok="/"
-                image=""
-              />
-            </SwiperSlide>
 
-            <SwiperSlide>
-              <Card
-                name="Jhon Doe"
-                role="Cardio Expert"
-                facebook="valmir.almeida.5454"
-                instagram="valmiralmeidadev"
-                tiktok="/"
-                image=""
-              />
-            </SwiperSlide>
+      <Cards>
+        <Card
+          name="Jhon Doe"
+          role="Cardio Expert"
+          facebook="valmir.almeida.5454"
+          instagram="valmiralmeidadev"
+          tiktok="/"
+          image=""
+        />
 
-            <SwiperSlide>
-              <Card
-                name="Jhon Doe"
-                role="Cardio Expert"
-                facebook="valmir.almeida.5454"
-                instagram="valmiralmeidadev"
-                tiktok="/"
-                image=""
-              />
-            </SwiperSlide>
+        <Card
+          name="Jhon Doe"
+          role="Cardio Expert"
+          facebook="valmir.almeida.5454"
+          instagram="valmiralmeidadev"
+          tiktok="/"
+          image=""
+        />
 
-            <SwiperSlide>
-              <Card
-                name="Jhon Doe"
-                role="Cardio Expert"
-                facebook="valmir.almeida.5454"
-                instagram="valmiralmeidadev"
-                tiktok="/"
-                image=""
-              />
-            </SwiperSlide>
+        <Card
+          name="Jhon Doe"
+          role="Cardio Expert"
+          facebook="valmir.almeida.5454"
+          instagram="valmiralmeidadev"
+          tiktok="/"
+          image=""
+        />
 
-            <SwiperSlide>
-              <Card
-                name="Jhon Doe"
-                role="Cardio Expert"
-                facebook="valmir.almeida.5454"
-                instagram="valmiralmeidadev"
-                tiktok="/"
-                image=""
-              />
-            </SwiperSlide>
-          </Cards>
-        </Swiper>
-      </>
+        <Card
+          name="Jhon Doe"
+          role="Cardio Expert"
+          facebook="valmir.almeida.5454"
+          instagram="valmiralmeidadev"
+          tiktok="/"
+          image=""
+        />
+
+        <Card
+          name="Jhon Doe"
+          role="Cardio Expert"
+          facebook="valmir.almeida.5454"
+          instagram="valmiralmeidadev"
+          tiktok="/"
+          image=""
+        />
+      </Cards>
     </Container>
   );
 }
