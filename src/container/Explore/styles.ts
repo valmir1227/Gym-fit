@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "../../assets/video.svg";
+import VideoBg from "../../assets/video.svg";
 
 export const Container = styled.section`
   background: linear-gradient(
@@ -7,7 +7,7 @@ export const Container = styled.section`
       rgba(232, 120, 155, 0.8) 0%,
       rgba(147, 88, 248, 0.8) 100%
     ),
-    url(${img?.src});
+    url(${VideoBg?.src});
 
   width: 100vw;
   height: 20rem;

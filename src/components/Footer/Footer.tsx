@@ -1,141 +1,16 @@
+import Link from "next/link";
 import Title from "components/Title/Title";
 import Image from "next/image";
-import styled from "styled-components";
-
+import { Contact, Container, Form, Logo, NavContainer, SciContainer } from "./styles";
+import { MdEmail, MdPhone } from "react-icons/md";
 import PaperPlane from "../../assets/paper-plane.png";
 import FooterLogo from "../../assets/footer-logo.png";
-import Link from "next/link";
-import { MdEmail, MdPhone } from "react-icons/md";
+import styled from "styled-components";
 
-export const Container = styled.footer`
-  width: 100%;
-  height: 40rem;
-  background: #e476a0;
-  background: linear-gradient(180deg, rgba(228, 118, 160, 1) 0%, #9a5bef 100%);
-  position: relative;
+import FacebookImg from "../../assets/facebook.png";
+import InstagramImg from "../../assets/instagram.png";
+import GithubImg from "../../assets/github.png";
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-`;
-
-export const Form = styled.div`
-  width: 50rem;
-  height: 20rem;
-  background: #fff;
-  position: absolute;
-  left: 50%;
-  top: -40px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 8px 3px rgba(228, 118, 160, 0.5);
-
-  div {
-    width: 15rem;
-    height: 40px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    border-radius: 30px;
-    position: relative;
-    box-shadow: 0px 2px 6px 1px rgba(228, 118, 160, 0.7);
-
-    input {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: inherit;
-      padding-left: 20px;
-      outline: none;
-      font-size: 0.9rem;
-    }
-
-    div {
-      position: absolute;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 100%;
-      background: #e476a0;
-      background: linear-gradient(
-        200deg,
-        rgba(228, 118, 160, 1) 0%,
-        #9a5bef 100%
-      );
-      position: relative;
-      img {
-        margin: auto;
-      }
-    }
-  }
-  p {
-    color: #616783;
-    margin: 2rem 0;
-    font-weight: 500;
-  }
-`;
-
-export const Logo = styled.div`
-  margin-top: 2rem;
-`;
-
-export const NavContainer = styled.div`
-  margin-top: 1rem;
-  p {
-    font-size: 0.6rem;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    li {
-      font-size: 0.9rem;
-      list-style: none;
-      font-weight: 500;
-      color: #fff;
-      text-transform: uppercase;
-    }
-  }
-`;
-
-export const Contact = styled.div`
-  text-align: center;
-  padding: 2rem 7rem 4rem;
-  p {
-  }
-
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 50px;
-
-    a {
-      display: flex;
-      align-items: center;
-      color: #fff;
-    }
-
-    svg {
-      border: 1px solid #fff;
-      border-radius: 100%;
-      margin-right: 10px;
-      padding: 5px;
-    }
-  }
-`;
 
 export default function Footer() {
   return (
@@ -204,6 +79,21 @@ export default function Footer() {
           </a>
         </div>
       </Contact>
+      <hr />
+      <SciContainer>
+        <p>&copy; 2022 ValmirAlmeidaDev</p>
+        <div>
+          <Link href="">
+            <Image src={InstagramImg} alt="" />
+          </Link>
+          <Link href="">
+            <Image src={FacebookImg} alt="" />
+          </Link>
+          <Link href="">
+            <Image src={GithubImg} alt="" />
+          </Link>
+        </div>
+      </SciContainer>
     </Container>
   );
 }
