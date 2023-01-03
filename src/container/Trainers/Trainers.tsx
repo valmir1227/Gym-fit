@@ -25,42 +25,6 @@ export default function Trainers() {
           tiktok="/"
           image=""
         />
-
-        <Card
-          name="Jhon Doe"
-          role="Cardio Expert"
-          facebook="valmir.almeida.5454"
-          instagram="valmiralmeidadev"
-          tiktok="/"
-          image=""
-        />
-
-        <Card
-          name="Jhon Doe"
-          role="Cardio Expert"
-          facebook="valmir.almeida.5454"
-          instagram="valmiralmeidadev"
-          tiktok="/"
-          image=""
-        />
-
-        <Card
-          name="Jhon Doe"
-          role="Cardio Expert"
-          facebook="valmir.almeida.5454"
-          instagram="valmiralmeidadev"
-          tiktok="/"
-          image=""
-        />
-
-        <Card
-          name="Jhon Doe"
-          role="Cardio Expert"
-          facebook="valmir.almeida.5454"
-          instagram="valmiralmeidadev"
-          tiktok="/"
-          image=""
-        />
       </Cards>
     </Container>
   );

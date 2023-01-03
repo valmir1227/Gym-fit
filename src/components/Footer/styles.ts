@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import FooterBg from "../../assets/footer-bg.png";
+import { device } from "../../../styles/devices";
 
 export const Container = styled.footer`
   width: 100%;
@@ -18,11 +19,19 @@ export const Container = styled.footer`
     height: 1px;
     margin: 2rem 0 1rem;
   }
+  @media ${device.mobileS} {
+    padding: 0 1rem;
+  }
+  @media ${device.tablet} {
+    padding: 0 3rem;
+  }
+  @media ${device.laptop} {
+    padding: 0 7rem;
+  }
 `;
 
 export const Form = styled.div`
   width: 50rem;
-  height: 20rem;
   margin-top: -50px;
   background: #fff;
   display: flex;
@@ -79,6 +88,17 @@ export const Form = styled.div`
     margin: 2rem 0;
     font-weight: 500;
   }
+
+  @media ${device.mobileS} {
+    padding: 0;
+    width: 100%;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+ 
+
 `;
 
 export const Logo = styled.div`
@@ -96,7 +116,6 @@ export const NavContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 20px;
-
     li {
       font-size: 0.9rem;
       list-style: none;
@@ -109,20 +128,21 @@ export const NavContainer = styled.div`
 
 export const Contact = styled.div`
   text-align: center;
-  padding: 2rem 7rem;
   p {
   }
 
   div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    gap: 50px;
+    gap: 20px;
 
     a {
       display: flex;
       align-items: center;
+      flex-wrap: w;
       color: #fff;
     }
 

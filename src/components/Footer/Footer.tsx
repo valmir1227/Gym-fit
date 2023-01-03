@@ -5,7 +5,6 @@ import { Contact, Container, Form, Logo, NavContainer, SciContainer } from "./st
 import { MdEmail, MdPhone } from "react-icons/md";
 import PaperPlane from "../../assets/paper-plane.png";
 import FooterLogo from "../../assets/footer-logo.png";
-import styled from "styled-components";
 
 import FacebookImg from "../../assets/facebook.png";
 import InstagramImg from "../../assets/instagram.png";

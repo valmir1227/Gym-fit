@@ -16,8 +16,6 @@ export default function Blog() {
       </Text>
       <Cards>
         <Card />
-        <Card />
-        <Card />
       </Cards>
     </Container>
   );

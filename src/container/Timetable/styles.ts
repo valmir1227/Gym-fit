@@ -10,6 +10,15 @@ export const Container = styled.section`
   @media ${device.mobileS} {
     padding: 1rem;
   }
+
+  @media ${device.tablet} {
+    padding: 1rem 3rem;
+  }
+
+  @media ${device.laptop} {
+    padding: 1rem 7rem;
+  }
+
 `;
 
 export const Text = styled.div`
@@ -20,6 +29,8 @@ export const Text = styled.div`
 export const CardConTainer = styled.div`
   width: 100%;
   margin-top: 3rem;
+  
+
 
   display: flex;
   flex-wrap: wrap;

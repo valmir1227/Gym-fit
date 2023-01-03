@@ -7,6 +7,7 @@ const Text = styled.h1`
   margin: 3rem auto 2rem;
   color: #322b40;
   text-transform: uppercase;
+  text-align: center;
 
   span {
     color: #9258f9;

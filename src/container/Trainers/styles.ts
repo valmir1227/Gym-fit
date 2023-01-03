@@ -3,7 +3,6 @@ import { device } from "../../../styles/devices";
 
 export const Container = styled.section`
   width: 100%;
-  padding: 0 7rem;
   div {
     text-align: center;
     margin-bottom: 2rem;
@@ -22,6 +21,7 @@ export const Container = styled.section`
   }
 
   @media ${device.laptop} {
+  padding: 0 7rem;
   }
 `;
 
