@@ -42,11 +42,6 @@ export const Head = styled.header`
   }
 
   @media ${device.laptop} {
-    padding: 3rem 4rem;
-  }
-
-  ///aqui
-  @media ${device.laptopL} {
-    padding: 6rem 12rem;
+    padding: 1rem 4rem;
   }
 `;

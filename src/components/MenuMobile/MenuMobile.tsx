@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../public/images/logo.png";
+import Logo from "../../assets/logo.png";
 import GlobalButton from "../Button/Button";
 import { Container } from "./styles";
 
@@ -30,10 +30,9 @@ export default function MenuMobile() {
         <Link href="/">
           <li>Pages</li>
         </Link>
-        <GlobalButton variant="primary" 
-        href="/about" text="Get in Toutch" />
+        <GlobalButton variant="primary" href="/about" text="Get in Toutch" />
       </nav>
-        <AiOutlineAlignLeft />
+      <AiOutlineAlignLeft />
     </Container>
   );
 }
