@@ -26,10 +26,8 @@ export const Container = styled.section`
 `;
 
 export const Cards = styled.div`
-  width: 100vw;
+  width: 100%;
   height: auto;
-
   display: flex;
-  justify-content: center;
   gap: 1rem;
 `;
