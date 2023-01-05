@@ -21,13 +21,11 @@ export const Container = styled.section`
   }
 
   @media ${device.laptop} {
-  padding: 0 7rem;
+    padding: 0 7rem;
   }
 `;
 
 export const Cards = styled.div`
   width: 100%;
   height: auto;
-  display: flex;
-  gap: 1rem;
 `;

@@ -35,7 +35,7 @@ export const Container = styled.div`
 export const Text = styled.div`
   text-align: center;
   margin-top: 2rem;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
 
   span {
     font-size: 0.85rem;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 20rem;
-  height: 27rem;
+  height: 30rem;
   border-radius: 10px;
   transition: all 0.3s ease;
   position: sticky;
@@ -22,7 +22,7 @@ export const Text = styled.div`
   position: absolute;
   visibility: hidden;
 
-  width: 20rem;
+  width: 24rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ export const SocialMedia = styled.div`
 export const Profile = styled.div`
   position: relative;
 
-  width: 20rem;
+  width: 24rem;
   height: 100%;
   z-index: -1;
   border-radius: 10px;

@@ -3,24 +3,10 @@ import Card from "../../components/TrainersCard/Card";
 import { Cards, Container } from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination } from "swiper";
 import "swiper/css";
-import { useEffect, useState } from "react";
 
 export default function Trainers() {
-  const [winSize, setWinSize] = useState(0);
-  const [slidesPerView, setSlidesPerView] = useState(0);
-
-  useEffect(() => {
-    setWinSize(window.innerWidth);
-    if (winSize <= 500) {
-      setSlidesPerView(1.5);
-    } else if (winSize <= 768) setSlidesPerView(2.5);
-    else {
-      setSlidesPerView(3);
-    }
-  }, [winSize]);
-
   return (
     <Container>
       <div>
@@ -35,39 +21,28 @@ export default function Trainers() {
 
       <Cards>
         <Swiper
-          slidesPerView={slidesPerView}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
+          slidesPerView={1}
           spaceBetween={10}
-          centeredSlides={true}
           pagination={{
             clickable: true,
           }}
-          modules={[Autoplay, Pagination]}
+          breakpoints={{
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+          modules={[Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Card
-              name="Jhon Doe"
-              role="Cardio Expert"
-              facebook="valmir.almeida.5454"
-              instagram="valmiralmeidadev"
-              tiktok="/"
-              image=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              name="Jhon Doe"
-              role="Cardio Expert"
-              facebook="valmir.almeida.5454"
-              instagram="valmiralmeidadev"
-              tiktok="/"
-              image=""
-            />
-          </SwiperSlide>
           <SwiperSlide>
             <Card
               name="Jhon Doe"

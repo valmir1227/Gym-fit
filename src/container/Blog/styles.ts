@@ -5,6 +5,11 @@ export const Container = styled.section`
   width: 100vw;
   height: auto;
 
+  .swiper-wrapper {
+    padding-bottom: 1rem;
+    justify-content: center;
+  }
+
   @media ${device.mobileS} {
     padding: 1rem 1rem 7rem;
   }
@@ -26,5 +31,4 @@ export const Cards = styled.div`
   width: 100%;
   display: flex;
   margin-top: 3rem;
-  justify-content: space-between;
 `;
