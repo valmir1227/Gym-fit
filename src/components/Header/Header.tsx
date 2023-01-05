@@ -3,9 +3,9 @@ import Link from "next/link";
 import Logo from "../../assets/logo.png";
 import GlobalButton from "../Button/Button";
 import { Head, Mobile } from "./styles";
-
 import { useEffect, useState } from "react";
 import { AiOutlineAlignLeft, AiOutlineClose } from "react-icons/ai";
+import NavLink from "components/NavLink/NavLink";
 
 export default function Header() {
   const [winSize, setWinSize] = useState(0);
@@ -21,25 +21,13 @@ export default function Header() {
         <Head>
           <Image src={Logo} alt="" />
           <nav>
-            <Link href="/">
-              <li className="active">Home</li>
-            </Link>
-            <Link href="/">
-              <li>About us</li>
-            </Link>
+            <NavLink href="/" text="Home" />
+            <NavLink href="/about" text="About" />
+            <NavLink href="/courses" text="Courses" />
+            <NavLink href="/schedule" text="Schedule" />
+            <NavLink href="/blog" text="Blog" />
+            <NavLink href="/pages" text="Pages" />
 
-            <Link href="/">
-              <li>Courses</li>
-            </Link>
-            <Link href="/">
-              <li>Schedule</li>
-            </Link>
-            <Link href="/">
-              <li>Blog</li>
-            </Link>
-            <Link href="/">
-              <li>Pages</li>
-            </Link>
             <GlobalButton
               variant="primary"
               href="/about"
@@ -56,7 +44,7 @@ export default function Header() {
                 <Link href="/">
                   <li className="active">Home</li>
                 </Link>
-                <Link href="/">
+                <Link href="/about">
                   <li>About us</li>
                 </Link>
 

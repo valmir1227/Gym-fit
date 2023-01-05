@@ -16,21 +16,6 @@ export const Head = styled.header`
     justify-content: flex-end;
     list-style: none;
     gap: 2rem;
-
-    .active {
-      color: #9258f9;
-    }
-
-    li {
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-
-      &:hover {
-        color: #9258f9;
-      }
-    }
   }
 
   @media ${device.mobileS} {

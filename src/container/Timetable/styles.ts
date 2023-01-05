@@ -4,8 +4,8 @@ import { device } from "../../../styles/devices";
 export const Container = styled.section`
   width: 100vw;
   min-height: 100vh;
-
   padding: 0 7rem;
+  background: #F8F8F9;
 
   @media ${device.mobileS} {
     padding: 1rem;

@@ -17,7 +17,7 @@ export const Container = styled.footer`
   hr {
     width: 100%;
     height: 1px;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0;
   }
   @media ${device.mobileS} {
     padding: 0 1rem;
@@ -97,8 +97,6 @@ export const Form = styled.div`
       font-size: 1.5rem;
     }
   }
- 
-
 `;
 
 export const Logo = styled.div`
@@ -128,8 +126,6 @@ export const NavContainer = styled.div`
 
 export const Contact = styled.div`
   text-align: center;
-  p {
-  }
 
   div {
     display: flex;

@@ -1,7 +1,14 @@
 import Link from "next/link";
 import Title from "components/Title/Title";
 import Image from "next/image";
-import { Contact, Container, Form, Logo, NavContainer, SciContainer } from "./styles";
+import {
+  Contact,
+  Container,
+  Form,
+  Logo,
+  NavContainer,
+  SciContainer,
+} from "./styles";
 import { MdEmail, MdPhone } from "react-icons/md";
 import PaperPlane from "../../assets/paper-plane.png";
 import FooterLogo from "../../assets/footer-logo.png";
@@ -9,7 +16,6 @@ import FooterLogo from "../../assets/footer-logo.png";
 import FacebookImg from "../../assets/facebook.png";
 import InstagramImg from "../../assets/instagram.png";
 import GithubImg from "../../assets/github.png";
-
 
 export default function Footer() {
   return (
@@ -30,7 +36,7 @@ export default function Footer() {
 
       <NavContainer>
         <p>
-          ---------------------------------------------------------------------------------------------------------------
+          <hr />
         </p>
         <nav>
           <Link href="/">
@@ -54,7 +60,7 @@ export default function Footer() {
           </Link>
         </nav>
         <p>
-          ---------------------------------------------------------------------------------------------------------------
+          <hr />
         </p>
       </NavContainer>
 
