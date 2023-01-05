@@ -3,10 +3,24 @@ import Card from "../../components/TrainersCard/Card";
 import { Cards, Container } from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { useEffect, useState } from "react";
 
 export default function Trainers() {
+  const [winSize, setWinSize] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(0);
+
+  useEffect(() => {
+    setWinSize(window.innerWidth);
+    if (winSize <= 500) {
+      setSlidesPerView(1.5);
+    } else if (winSize <= 768) setSlidesPerView(2.5);
+    else {
+      setSlidesPerView(3);
+    }
+  }, [winSize]);
+
   return (
     <Container>
       <div>
@@ -21,16 +35,17 @@ export default function Trainers() {
 
       <Cards>
         <Swiper
-          slidesPerView={"auto"}
+          slidesPerView={slidesPerView}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           spaceBetween={10}
-          slidesPerGroup={3}
-          loop={true}
-          loopFillGroupWithBlank={true}
+          centeredSlides={true}
           pagination={{
             clickable: true,
           }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>

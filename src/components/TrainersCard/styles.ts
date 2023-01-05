@@ -7,6 +7,7 @@ export const Container = styled.div`
   transition: all 0.3s ease;
   position: sticky;
   z-index: 1;
+  margin-left: 1rem;
 
   &:hover h4 {
     display: none;
