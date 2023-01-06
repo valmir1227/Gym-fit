@@ -5,10 +5,11 @@ export const Container = styled.section`
   width: 100%;
   div {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     p {
       color: #616797;
+      
     }
   }
 
@@ -28,4 +29,7 @@ export const Container = styled.section`
 export const Cards = styled.div`
   width: 100%;
   height: auto;
+  margin-top: 3rem;
+
+
 `;

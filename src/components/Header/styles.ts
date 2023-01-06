@@ -27,7 +27,7 @@ export const Head = styled.header`
   }
 
   @media ${device.laptop} {
-    padding: 2rem 4rem;
+    padding: 2rem 7rem;
   }
 `;
 

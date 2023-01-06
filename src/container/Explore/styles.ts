@@ -10,7 +10,7 @@ export const Container = styled.section`
     url(${VideoBg?.src});
 
   width: 100vw;
-  height: 20rem;
+  height: 25rem;
   background-size: cover;
   background-position: center;
 

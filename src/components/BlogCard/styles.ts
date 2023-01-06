@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 22rem;
+  max-width: 28rem;
   border-radius: 10px;
   background: #fff;
   cursor: pointer;

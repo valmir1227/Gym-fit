@@ -10,6 +10,7 @@ export const Container = styled.div`
   justify-content: center;
   border-radius: 10px;
   text-align: center;
+  background: #fff;
 
   &:hover {
     background: rgb(232, 120, 155);
@@ -38,7 +39,6 @@ export const Container = styled.div`
   @media ${device.laptop} {
     width: 25%;
   }
-
 `;
 
 export const Text = styled.div`

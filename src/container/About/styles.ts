@@ -18,12 +18,12 @@ export const AboutContainer = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 3rem 1rem;
+    padding: 3rem 7rem;
     flex-wrap: nowrap;
   }
 
   @media ${device.laptopL} {
-    padding: 6rem 12rem;
+    padding: 6rem 7rem;
   }
 `;
 
@@ -78,8 +78,8 @@ export const Text = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 27rem;
-  height: 27rem;
+  width: 24rem;
+  height: 24rem;
 
   margin-left: 3.5rem;
 
@@ -105,13 +105,13 @@ export const ImageContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    width: 22rem;
-    height: 22rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: 4rem;
   }
 
   @media ${device.laptopL} {
-    width: 35rem;
-    height: 35rem;
+    width: 34rem;
+    height: 34rem;
   }
 `;

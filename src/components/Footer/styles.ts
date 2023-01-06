@@ -97,6 +97,13 @@ export const Form = styled.div`
       font-size: 1.5rem;
     }
   }
+
+  @media ${device.tablet} {
+    width: 50rem;
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const Logo = styled.div`

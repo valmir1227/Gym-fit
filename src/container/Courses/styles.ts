@@ -21,8 +21,10 @@ export const Container = styled.section`
     margin-top: 2rem;
   }
 
+  
+
   @media ${device.mobileS} {
-    padding: 1rem;
+    padding: 3rem;
   }
 `;
 

@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <div>
-      {winSize > 768 ? (
+      {winSize > 850 ? (
         <Head>
           <Image src={Logo} alt="" />
           <nav>
