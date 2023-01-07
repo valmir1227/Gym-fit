@@ -3,7 +3,7 @@ import Card from "../../components/TrainersCard/Card";
 import { Cards, Container } from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 
 export default function Trainers() {
@@ -23,6 +23,10 @@ export default function Trainers() {
         <Swiper
           slidesPerView={1}
           spaceBetween={10}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           pagination={{
             clickable: true,
           }}
@@ -40,7 +44,7 @@ export default function Trainers() {
               spaceBetween: 30,
             },
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
           <SwiperSlide>

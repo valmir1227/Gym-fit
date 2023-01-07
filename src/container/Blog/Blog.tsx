@@ -2,7 +2,7 @@ import Card from "components/BlogCard/Card";
 import Title from "components/Title/Title";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import { Cards, Container, Text } from "./styles";
 
@@ -21,6 +21,10 @@ export default function Blog() {
       <Cards>
         <Swiper
           slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           spaceBetween={10}
           pagination={{
             clickable: true,
@@ -39,7 +43,7 @@ export default function Blog() {
               spaceBetween: 30,
             },
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
           <SwiperSlide>
