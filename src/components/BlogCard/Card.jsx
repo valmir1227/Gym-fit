@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { createClient } from "../../../prismicio";
 
 import Blog1 from "../../assets/blog-img-1.png";
 import { Container, Text } from "./styles";

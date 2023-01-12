@@ -5,8 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import { Cards, Container, Text } from "./styles";
+import { createClient } from "../../../prismicio";
 
-export default function Blog() {
+export default function Blog({ articles }) {
   return (
     <Container>
       <Text>
@@ -47,7 +48,7 @@ export default function Blog() {
           className="mySwiper"
         >
           <SwiperSlide>
-            <Card />
+            <Card articles={articles} />
           </SwiperSlide>
 
           <SwiperSlide>

@@ -22,7 +22,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/container/Home/styles.ts",
-    "src/components/Button/Button.tsx"
-  ],
+    "src/components/Button/Button.tsx",
+    "./.slicemachine/prismicio.d.ts"
+, "prismicio.js"  ],
   "exclude": ["node_modules"]
 }
