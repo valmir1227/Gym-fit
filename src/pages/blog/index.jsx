@@ -1,6 +1,9 @@
-import { PrismicText } from "@prismicio/react";
 import styled from "styled-components";
 import { createClient } from "../../../prismicio";
+import * as prismicH from "@prismicio/helpers";
+import Head from "next/head";
+import { dateFormatter } from "utils/dateFormater";
+import { PrismicRichText } from "@prismicio/react";
 
 const Container = styled.section`
   width: 100%;
@@ -11,16 +14,22 @@ const Container = styled.section`
 `;
 
 export default function Blog({ articles }) {
+  const date = prismicH.asDate(
+    articles?.data?.publishDate || articles.first_publication_date
+  );
   console.log(articles);
+
   return (
     <Container>
+      <Head>
+        <title>GYMFIT | BLOG</title>
+      </Head>
       <div>
         {articles.map((article) => (
           <>
-            <span key={article.id}>{article.data.publishDate}</span>
-            <h1>
-              <PrismicText field={article.data.title} />
-            </h1>
+            <span key={article.id}>{dateFormatter.format(date)}</span>
+            <h1>{prismicH.asText(article.data.title)}</h1>
+            <p></p>
             <img width={300} src={article.data.featuredImage.url} alt="" />
           </>
         ))}
@@ -38,6 +47,7 @@ export async function getStaticProps({ previewData }) {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
+  console.log(articles);
 
   return {
     props: {
