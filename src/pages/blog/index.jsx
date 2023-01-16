@@ -1,36 +1,41 @@
-import styled from "styled-components";
+import Head from "next/head";
 import { createClient } from "../../../prismicio";
 import * as prismicH from "@prismicio/helpers";
-import Head from "next/head";
 import { dateFormatter } from "utils/dateFormater";
 import { PrismicRichText } from "@prismicio/react";
+import { SliceZone } from "@prismicio/react";
+import { components } from "../../slices";
 
+import styled from "styled-components";
 const Container = styled.section`
   width: 100%;
-  height: 300vh;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
-
-export default function Blog({ articles }) {
+export default function Blog({ articles, posts }) {
   const date = prismicH.asDate(
-    articles?.data?.publishDate || articles.first_publication_date
+    posts?.data?.publishDate || posts.first_publication_date
   );
-  console.log(articles);
+  console.log(articles[1].data.text[0].text);
 
   return (
     <Container>
       <Head>
-        <title>GYMFIT | BLOG</title>
+        <title>GYMFIT | BLOG </title>
       </Head>
       <div>
         {articles.map((article) => (
           <>
-            <span key={article.id}>{dateFormatter.format(date)}</span>
-            <h1>{prismicH.asText(article.data.title)}</h1>
-            <p></p>
-            <img width={300} src={article.data.featuredImage.url} alt="" />
+            <span key={article.slug}>{dateFormatter.format(date)}</span>
+            <h1>
+              <PrismicRichText field={article.data.title} />
+            </h1>
+            {article.data.text.map((text) => (
+              <p key={article.data}>{text.text}</p>
+            ))}
           </>
         ))}
       </div>
@@ -47,10 +52,15 @@ export async function getStaticProps({ previewData }) {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
-  console.log(articles);
+
+  const posts = articles.map((article) => ({
+    slug: article.uid,
+    title: article.data.title,
+  }));
 
   return {
     props: {
+      posts,
       articles,
     },
   };

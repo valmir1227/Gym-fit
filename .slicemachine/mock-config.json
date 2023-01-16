@@ -1,5 +1,20 @@
 {
   "_cts": {
-    "teste": {}
+    "teste": {},
+    "post": {}
+  },
+  "slices": {
+    "Posts": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
   }
 }

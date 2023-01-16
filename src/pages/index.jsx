@@ -34,7 +34,7 @@ export async function getStaticProps({ previewData }) {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
-  console.log(articles, null, 2);
+ 
 
   return {
     props: {

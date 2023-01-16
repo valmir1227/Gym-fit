@@ -6,6 +6,12 @@ import tikTokImg from "../../assets/tik-tok.png";
 import trainer2 from "../../assets/trainer2.png";
 import { Container, Profile, SocialMedia, Text } from "./styles";
 
+import {
+  PrismicRichText,
+  useAllPrismicDocumentsByType,
+} from "@prismicio/react";
+import { createClient } from "../../../prismicio";
+
 interface CardProps {
   name: string;
   instagram: string;
@@ -23,6 +29,7 @@ export default function Card({
   role,
   image,
 }: CardProps) {
+
   return (
     <Container>
       <Text>
