@@ -6,304 +6,50 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for post documents */
-interface PostDocumentData {
+/**
+ * Item in Content → Items
+ *
+ */
+export interface ContentSliceDefaultItem {
     /**
-     * text field in *post*
+     * text field in *Content → Items*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: post.text
-     * - **Tab**: Main
+     * - **API ID Path**: content.items[].text
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
     text: prismicT.RichTextField;
-    /**
-     * image field in *post*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: post.image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
 }
 /**
- * post document from Prismic
- *
- * - **API ID**: `post`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type PostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
-/** Content for teste documents */
-type TesteDocumentData = Record<string, never>;
-/**
- * teste document from Prismic
- *
- * - **API ID**: `teste`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type TesteDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TesteDocumentData>, "teste", Lang>;
-export type AllDocumentTypes = PostDocument | TesteDocument;
-/**
- * Primary content in Hero → Primary
- *
- */
-interface HeroSliceDefaultPrimary {
-    /**
-     * Tagline field in *Hero → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: Optional - Text above the title
-     * - **API ID Path**: hero.primary.tagline
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    tagline: prismicT.RichTextField;
-    /**
-     * Title field in *Hero → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: Large, bold title
-     * - **API ID Path**: hero.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Text field in *Hero → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: Optional - Main text to display
-     * - **API ID Path**: hero.primary.text
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    text: prismicT.RichTextField;
-    /**
-     * Background Image field in *Hero → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.backgroundImage
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    backgroundImage: prismicT.ImageField<never>;
-}
-/**
- * Item in Hero → Items
- *
- */
-export interface HeroSliceDefaultItem {
-    /**
-     * Button Link field in *Hero → Items*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: Link for the button
-     * - **API ID Path**: hero.items[].buttonLink
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    buttonLink: prismicT.LinkField;
-    /**
-     * Button Text field in *Hero → Items*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: Optional - Text for the button
-     * - **API ID Path**: hero.items[].buttonText
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    buttonText: prismicT.KeyTextField;
-    /**
-     * Button Style field in *Hero → Items*
-     *
-     * - **Field Type**: Select
-     * - **Placeholder**: Determines the button's appearance
-     * - **Default Value**: Filled
-     * - **API ID Path**: hero.items[].buttonStyle
-     * - **Documentation**: https://prismic.io/docs/core-concepts/select
-     *
-     */
-    buttonStyle: prismicT.SelectField<"Filled" | "Outlined", "filled">;
-}
-/**
- * Default variation for Hero Slice
+ * Default variation for Content Slice
  *
  * - **API ID**: `default`
- * - **Description**: `Hero`
+ * - **Description**: `Content`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, Simplify<HeroSliceDefaultItem>>;
+export type ContentSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<ContentSliceDefaultItem>>;
 /**
- * Slice variation for *Hero*
+ * Slice variation for *Content*
  *
  */
-type HeroSliceVariation = HeroSliceDefault;
+type ContentSliceVariation = ContentSliceDefault;
 /**
- * Hero Shared Slice
+ * Content Shared Slice
  *
- * - **API ID**: `hero`
- * - **Description**: `Hero`
+ * - **API ID**: `content`
+ * - **Description**: `Content`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
-/**
- * Primary content in ImageAndText → Primary
- *
- */
-interface ImageAndTextSliceDefaultPrimary {
-    /**
-     * Image Side field in *ImageAndText → Primary*
-     *
-     * - **Field Type**: Select
-     * - **Placeholder**: *None*
-     * - **Default Value**: Left
-     * - **API ID Path**: image_and_text.primary.imageSide
-     * - **Documentation**: https://prismic.io/docs/core-concepts/select
-     *
-     */
-    imageSide: prismicT.SelectField<"Left" | "Right", "filled">;
-    /**
-     * Image field in *ImageAndText → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: image_and_text.primary.image
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
-    /**
-     * Tagline field in *ImageAndText → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: Optional - Text above the main text
-     * - **API ID Path**: image_and_text.primary.tagline
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    tagline: prismicT.RichTextField;
-    /**
-     * Text field in *ImageAndText → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: Main text to display
-     * - **API ID Path**: image_and_text.primary.text
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    text: prismicT.RichTextField;
-    /**
-     * Button Link field in *ImageAndText → Primary*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: Optional - Link for the button
-     * - **API ID Path**: image_and_text.primary.buttonLink
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    buttonLink: prismicT.LinkField;
-    /**
-     * Button Text field in *ImageAndText → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: Optional - Text for the button
-     * - **API ID Path**: image_and_text.primary.buttonText
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    buttonText: prismicT.KeyTextField;
-}
-/**
- * Default variation for ImageAndText Slice
- *
- * - **API ID**: `default`
- * - **Description**: `ImageAndText`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type ImageAndTextSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ImageAndTextSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *ImageAndText*
- *
- */
-type ImageAndTextSliceVariation = ImageAndTextSliceDefault;
-/**
- * ImageAndText Shared Slice
- *
- * - **API ID**: `image_and_text`
- * - **Description**: `ImageAndText`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type ImageAndTextSlice = prismicT.SharedSlice<"image_and_text", ImageAndTextSliceVariation>;
-/**
- * Primary content in Posts → Primary
- *
- */
-interface PostsSliceDefaultPrimary {
-    /**
-     * Title field in *Posts → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: posts.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * text field in *Posts → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: posts.primary.text
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    text: prismicT.RichTextField;
-}
-/**
- * Default variation for Posts Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Posts`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type PostsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PostsSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *Posts*
- *
- */
-type PostsSliceVariation = PostsSliceDefault;
-/**
- * Posts Shared Slice
- *
- * - **API ID**: `posts`
- * - **Description**: `Posts`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type PostsSlice = prismicT.SharedSlice<"posts", PostsSliceVariation>;
+export type ContentSlice = prismicT.SharedSlice<"content", ContentSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
     }
     namespace Content {
-        export type { PostDocumentData, PostDocument, TesteDocumentData, TesteDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageAndTextSliceDefaultPrimary, ImageAndTextSliceDefault, ImageAndTextSliceVariation, ImageAndTextSlice, PostsSliceDefaultPrimary, PostsSliceDefault, PostsSliceVariation, PostsSlice };
+        export type { ContentSliceDefaultItem, ContentSliceDefault, ContentSliceVariation, ContentSlice };
     }
 }

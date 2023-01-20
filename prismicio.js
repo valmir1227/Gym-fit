@@ -16,11 +16,7 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 const routes = [
   {
     type: "article",
-    path: "/articles/:uid",
-  },
-  {
-    type: "page",
-    path: "/:uid",
+    path: "/blog/:uid",
   },
 ];
 
