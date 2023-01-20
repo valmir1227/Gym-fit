@@ -6,11 +6,34 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Text documents */
+type TextDocumentData = Record<string, never>;
+/**
+ * Text document from Prismic
+ *
+ * - **API ID**: `text`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TextDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TextDocumentData>, "text", Lang>;
+export type AllDocumentTypes = TextDocument;
 /**
  * Item in Content → Items
  *
  */
 export interface ContentSliceDefaultItem {
+    /**
+     * title field in *Content → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: content.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
     /**
      * text field in *Content → Items*
      *
@@ -47,9 +70,9 @@ type ContentSliceVariation = ContentSliceDefault;
 export type ContentSlice = prismicT.SharedSlice<"content", ContentSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
+        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ContentSliceDefaultItem, ContentSliceDefault, ContentSliceVariation, ContentSlice };
+        export type { TextDocumentData, TextDocument, AllDocumentTypes, ContentSliceDefaultItem, ContentSliceDefault, ContentSliceVariation, ContentSlice };
     }
 }

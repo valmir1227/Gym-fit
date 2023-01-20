@@ -20,6 +20,20 @@
                 }
               ]
             }
+          ],
+          [
+            "title",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Eiusmod cillum officia ad laborum commodo deserunt anim anim anim ad adipisicing."
+                  }
+                }
+              ]
+            }
           ]
         ]
       }
