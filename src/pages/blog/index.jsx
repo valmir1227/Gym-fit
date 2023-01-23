@@ -1,4 +1,5 @@
 import Head from "next/head";
+import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../../prismicio";
 import { PrismicRichText } from "@prismicio/react";
 import {
@@ -15,11 +16,20 @@ import { AiFillClockCircle } from "react-icons/ai";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../../../slices";
 import Image from "next/image";
+import { dateFormatter } from "utils/dateFormater";
 
 export default function Blog({ articles }) {
+  const getExcertp = (text) => {
+    if (!text) return "";
+    let finalExcerpt = text.slice(0, 300);
+    if (finalExcerpt.length < text.length) {
+      let lastSpace = finalExcerpt.lastIndexOf(" ");
+      finalExcerpt = finalExcerpt.slice(0, lastSpace) + "...";
+    }
+    return finalExcerpt;
+  };
 
-
-
+  console.log(articles);
 
   return (
     <Container>
@@ -32,10 +42,10 @@ export default function Blog({ articles }) {
       </Header>
       <Articles>
         {articles.map((article) => (
-          <Post key={article}>
+          <Post key={article.id}>
             <ImageContainer>
               <Image
-                src={article.data.image.url}
+                src={article.data?.image.url}
                 alt={article.data.image?.alt}
                 width={500}
                 height={500}
@@ -44,12 +54,13 @@ export default function Blog({ articles }) {
             <Content>
               <span>
                 <AiFillClockCircle color="#D471B0" />
-                {article.data.publishdate}
+                {dateFormatter.format(article.data.firstPublicationDate)}
               </span>
               <h3>
                 <PrismicRichText field={article.data.title} />
               </h3>
-              <p>{article.data.excerpt[0].text}</p>
+              <p>{getExcertp(article.data?.excerpt[0]?.text)}</p>
+
               {
                 //<SliceZone slices={article.data.slices} components={components} />
               }
