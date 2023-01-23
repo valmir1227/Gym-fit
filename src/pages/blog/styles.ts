@@ -61,7 +61,7 @@ export const Post = styled.div`
   flex-direction: column;
 `;
 
-export const Image = styled.div`
+export const ImageContainer = styled.div`
   width: 400px;
   height: 300px;
 

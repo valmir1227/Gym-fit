@@ -1,12 +1,26 @@
 import Head from "next/head";
 import { createClient } from "../../../prismicio";
-import { PrismicRichText, SliceZone } from "@prismicio/react";
-import { Articles, Container, Content, Header, Image, Post } from "./styles";
+import { PrismicRichText } from "@prismicio/react";
+import {
+  Articles,
+  Container,
+  Content,
+  Header,
+  ImageContainer,
+  Post,
+} from "./styles";
 import Link from "next/link";
 import { AiFillClockCircle } from "react-icons/ai";
 
+import { SliceZone } from "@prismicio/react";
+import { components } from "../../../slices";
+import Image from "next/image";
+
 export default function Blog({ articles }) {
-  console.log(articles[0].data);
+
+
+
+
   return (
     <Container>
       <Head>
@@ -19,9 +33,14 @@ export default function Blog({ articles }) {
       <Articles>
         {articles.map((article) => (
           <Post key={article}>
-            <Image>
-              <img src={article.data.image.url} alt="" />
-            </Image>
+            <ImageContainer>
+              <Image
+                src={article.data.image.url}
+                alt={article.data.image?.alt}
+                width={500}
+                height={500}
+              />
+            </ImageContainer>
             <Content>
               <span>
                 <AiFillClockCircle color="#D471B0" />
@@ -30,9 +49,11 @@ export default function Blog({ articles }) {
               <h3>
                 <PrismicRichText field={article.data.title} />
               </h3>
-              {article.data.text.map((text) => (
-                <p key={article.data}>{text.text}</p>
-              ))}
+              <p>{article.data.excerpt[0].text}</p>
+              {
+                //<SliceZone slices={article.data.slices} components={components} />
+              }
+
               <Link href="/">READ MORE</Link>
             </Content>
           </Post>
