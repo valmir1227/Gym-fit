@@ -18,6 +18,11 @@ const routes = [
     type: "article",
     path: "/blog/:uid",
   },
+  {
+    type: "trainers",
+    path: "/trainers/:uid",
+  },
+  
 ];
 
 /**

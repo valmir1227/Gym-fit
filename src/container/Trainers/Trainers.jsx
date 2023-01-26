@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 
-export default function Trainers() {
+export default function Trainers({ trainers }) {
   return (
     <Container>
       <div>
@@ -47,46 +47,18 @@ export default function Trainers() {
           modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Card
-              name="Jhon Doe"
-              role="Cardio Expert"
-              facebook="valmir.almeida.5454"
-              instagram="valmiralmeidadev"
-              tiktok="/"
-              image=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              name="Jhon Doe"
-              role="Cardio Expert"
-              facebook="valmir.almeida.5454"
-              instagram="valmiralmeidadev"
-              tiktok="/"
-              image=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              name="Jhon Doe"
-              role="Cardio Expert"
-              facebook="valmir.almeida.5454"
-              instagram="valmiralmeidadev"
-              tiktok="/"
-              image=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              name="Jhon Doe"
-              role="Cardio Expert"
-              facebook="valmir.almeida.5454"
-              instagram="valmiralmeidadev"
-              tiktok="/"
-              image=""
-            />
-          </SwiperSlide>
+          {trainers.map((trainer) => (
+            <SwiperSlide key={trainer.id}>
+              <Card
+                role={trainer.data.role[0].text}
+                name={trainer.data.name[0].text}
+                image={trainer.data.profile.url}
+                instagram={trainer.data.instagram.url}
+                tiktok={trainer.data.tiktok.url}
+                facebook={trainer.data.fcebook.url}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Cards>
     </Container>

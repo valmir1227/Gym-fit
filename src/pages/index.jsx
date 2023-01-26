@@ -1,6 +1,6 @@
-import Blog from "container/Blog/Blog";
 import Head from "next/head";
 import { createClient } from "../../prismicio";
+import Blog from "container/Blog/Blog";
 import About from "../container/About/About";
 import Courses from "../container/Courses/Courses";
 import Explore from "../container/Explore/Explore";
@@ -8,7 +8,7 @@ import Home from "../container/Home/Home";
 import Timetable from "../container/Timetable/Timetable";
 import Trainers from "../container/Trainers/Trainers";
 
-export default function Index({ articles }) {
+export default function Index({ trainers }) {
   return (
     <>
       <Head>
@@ -17,7 +17,7 @@ export default function Index({ articles }) {
       <Home />
       <About />
       <Courses />
-      <Trainers />
+      <Trainers trainers={trainers} />
       <Timetable />
       <Explore />
       <Blog />
@@ -28,17 +28,11 @@ export default function Index({ articles }) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const articles = await client.getAllByType("article", {
-    orderings: [
-      { field: "my.article.publishDate", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-  });
- 
+  const trainers = await client.getAllByType("trainers");
 
   return {
     props: {
-      articles,
+      trainers,
     },
   };
 }

@@ -3,14 +3,7 @@ import Link from "next/link";
 import facebookImg from "../../assets/facebook.png";
 import instagramImg from "../../assets/instagram.png";
 import tikTokImg from "../../assets/tik-tok.png";
-import trainer2 from "../../assets/trainer2.png";
 import { Container, Profile, SocialMedia, Text } from "./styles";
-
-import {
-  PrismicRichText,
-  useAllPrismicDocumentsByType,
-} from "@prismicio/react";
-import { createClient } from "../../../prismicio";
 
 interface CardProps {
   name: string;
@@ -29,7 +22,6 @@ export default function Card({
   role,
   image,
 }: CardProps) {
-
   return (
     <Container>
       <Text>
@@ -40,15 +32,15 @@ export default function Card({
           sapiente...
         </p>
         <SocialMedia>
-          <Link href={`https://instagram.com/${instagram}`} target="_blank">
+          <Link href={instagram} target="_blank">
             <Image src={instagramImg} alt="logo instagram " />
           </Link>
 
-          <Link href={`https://facebook.com/${facebook}`} target="_blank">
+          <Link href={facebook} target="_blank">
             <Image src={facebookImg} alt="logo facebook" />
           </Link>
 
-          <Link href={""} target="_blank">
+          <Link href={tiktok} target="_blank">
             <Image src={tikTokImg} alt="logo tiktok" />
           </Link>
         </SocialMedia>
@@ -56,7 +48,7 @@ export default function Card({
 
       <Profile>
         <div>
-          <Image src={trainer2} alt="asa" />
+          <Image src={image} alt="asa" width={360} height={450}/>
         </div>
         <h4>{name}</h4>
       </Profile>
