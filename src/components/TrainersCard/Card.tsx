@@ -1,8 +1,9 @@
+import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import Link from "next/link";
-import facebookImg from "../../assets/facebook.png";
-import instagramImg from "../../assets/instagram.png";
-import tikTokImg from "../../assets/tik-tok.png";
+import facebookLogo from "../../assets/facebook.png";
+import instagramLogo from "../../assets/instagram.png";
+import tikTokLogo from "../../assets/tik-tok.png";
 import { Container, Profile, SocialMedia, Text } from "./styles";
 
 interface CardProps {
@@ -12,6 +13,7 @@ interface CardProps {
   tiktok: string;
   role: string;
   image: string;
+  description: string;
 }
 
 export default function Card({
@@ -21,34 +23,32 @@ export default function Card({
   tiktok,
   role,
   image,
+  description,
 }: CardProps) {
   return (
     <Container>
       <Text>
         <h3>{name}</h3>
         <span>{role}</span>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati,
-          sapiente...
-        </p>
+        <p>{description}</p>
         <SocialMedia>
           <Link href={instagram} target="_blank">
-            <Image src={instagramImg} alt="logo instagram " />
+            <Image src={instagramLogo} alt="logo instagram " />
           </Link>
 
           <Link href={facebook} target="_blank">
-            <Image src={facebookImg} alt="logo facebook" />
+            <Image src={facebookLogo} alt="logo facebook" />
           </Link>
 
           <Link href={tiktok} target="_blank">
-            <Image src={tikTokImg} alt="logo tiktok" />
+            <Image src={tikTokLogo} alt="logo tiktok" />
           </Link>
         </SocialMedia>
       </Text>
 
       <Profile>
         <div>
-          <Image src={image} alt="asa" width={360} height={450}/>
+          <Image src={image} alt="asa" width={360} height={450} />
         </div>
         <h4>{name}</h4>
       </Profile>

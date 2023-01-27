@@ -79,7 +79,7 @@ export const Content = styled.div`
     gap: 10px;
   }
 
-  h3 {
+  h3 a{
     font-size: 1.5rem;
     font-weight: 600;
     text-transform: capitalize;

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../../prismicio";
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import {
   Articles,
   Container,
@@ -19,6 +19,7 @@ import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
 
 export default function Blog({ articles }) {
+
   const getExcertp = (text) => {
     if (!text) return "";
     let finalExcerpt = text.slice(0, 300);
@@ -28,8 +29,6 @@ export default function Blog({ articles }) {
     }
     return finalExcerpt;
   };
-
-  console.log(articles);
 
   return (
     <Container>
@@ -57,7 +56,9 @@ export default function Blog({ articles }) {
                 {dateFormatter.format(article.data.firstPublicationDate)}
               </span>
               <h3>
-                <PrismicRichText field={article.data.title} />
+                <PrismicLink document={article}>
+                  <PrismicRichText field={article.data.title} />
+                </PrismicLink>
               </h3>
               <p>{getExcertp(article.data?.excerpt[0]?.text)}</p>
 

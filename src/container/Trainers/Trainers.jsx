@@ -56,6 +56,7 @@ export default function Trainers({ trainers }) {
                 instagram={trainer.data.instagram.url}
                 tiktok={trainer.data.tiktok.url}
                 facebook={trainer.data.fcebook.url}
+                description={trainer.data.description[0].text}
               />
             </SwiperSlide>
           ))}
