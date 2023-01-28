@@ -20,7 +20,7 @@ import { dateFormatter } from "utils/dateFormater";
 
 export default function Blog({ articles }) {
 
-  const getExcertp = (text) => {
+   const getExcertp = (text) => {
     if (!text) return "";
     let finalExcerpt = text.slice(0, 300);
     if (finalExcerpt.length < text.length) {

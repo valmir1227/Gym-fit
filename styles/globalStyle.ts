@@ -40,4 +40,10 @@ button {
   a {
     text-decoration: none;
   }
-`;
+  
+  .swiperArticle {
+    width: 100%;
+  overflow-x: hidden;
+
+  }
+  `;

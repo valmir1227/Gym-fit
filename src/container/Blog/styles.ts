@@ -28,6 +28,7 @@ export const Text = styled.div`
 `;
 
 export const Cards = styled.div`
+ 
   width: 100%;
   display: flex;
   margin-top: 3rem;

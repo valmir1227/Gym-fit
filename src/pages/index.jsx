@@ -8,7 +8,7 @@ import Home from "../container/Home/Home";
 import Timetable from "../container/Timetable/Timetable";
 import Trainers from "../container/Trainers/Trainers";
 
-export default function Index({ trainers }) {
+export default function Index({ trainers, articles }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function Index({ trainers }) {
       <Trainers trainers={trainers} />
       <Timetable />
       <Explore />
-      <Blog />
+      <Blog articles={articles} />
     </>
   );
 }
@@ -29,9 +29,16 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const trainers = await client.getAllByType("trainers");
+  const articles = await client.getAllByType("article", {
+    orderings: [
+      { field: "my.article.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
 
   return {
     props: {
+      articles,
       trainers,
     },
   };

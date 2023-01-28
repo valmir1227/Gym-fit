@@ -5,9 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import { Cards, Container, Text } from "./styles";
-import { createClient } from "../../../prismicio";
+import { dateFormatter } from "utils/dateFormater";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 
 export default function Blog({ articles }) {
+  console.log(articles[0].data);
+  const getExcertp = (text) => {
+    if (!text) return "";
+    let finalExcerpt = text.slice(0, 300);
+    if (finalExcerpt.length < text.length) {
+      let lastSpace = finalExcerpt.lastIndexOf(" ");
+      finalExcerpt = finalExcerpt.slice(0, lastSpace) + "...";
+    }
+    return finalExcerpt;
+  };
   return (
     <Container>
       <Text>
@@ -47,25 +58,16 @@ export default function Blog({ articles }) {
           modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Card articles={articles} />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
+          {articles.map((article) => (
+            <SwiperSlide key={article.id} className="swiperArticle">
+              <Card
+                content={getExcertp(article.data?.excerpt[0]?.text)}
+                image={article.data?.image.url}
+                publishDate={article.data.firstPublicationDate}
+                title={<PrismicRichText field={article.data.title} />}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Cards>
     </Container>
