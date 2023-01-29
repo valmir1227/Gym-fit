@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import { device } from "../../../styles/devices";
 import BlogBg from "../../assets/blog-bg-img.png";
 
 export const Container = styled.section`
   width: 100%;
-  height: 200vh;
 `;
 
 export const Header = styled.div`
@@ -42,15 +42,37 @@ export const Header = styled.div`
     color: #fff;
     margin-top: 1rem;
     text-transform: uppercase;
+    font-weight: 500;
+
+    &:hover {
+      color: #d84dc7;
+    }
   }
 `;
 
 export const Articles = styled.main`
-  background: rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 1000px;
+  height: auto;
   display: flex;
-  gap: 10px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  margin-top: 3rem;
+
+  @media ${device.mobileS} {
+    padding: 1rem 1rem 7rem;
+    justify-content: center;
+  }
+
+  @media ${device.tablet} {
+    padding: 0 3rem 7em;
+    justify-content: center;
+  }
+
+  @media ${device.laptop} {
+    padding: 0 7rem 7rem;
+    justify-content: flex-start;
+  }
 `;
 
 export const Post = styled.div`
@@ -58,37 +80,63 @@ export const Post = styled.div`
   padding-bottom: 1rem;
   height: fit-content;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+
+  &:hover {
+    img {
+      filter: grayscale(1);
+    }
+
+    h3 a {
+      color: #d84dc7;
+    }
+  }
 `;
 
 export const ImageContainer = styled.div`
   width: 400px;
   height: 300px;
+  cursor: pointer;
 
   img {
     width: 100%;
     height: 100%;
+    transition: filter 0.3s;
   }
 `;
 
 export const Content = styled.div`
   margin-top: 2rem;
+
   span {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #616783;
   }
 
-  h3 a{
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: capitalize;
+  h3 a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
     margin-top: 1rem;
-    color: #000;
+    color: #0a0a0a;
+    transition: color 0.3s;
   }
 
   p {
     margin: 0.5rem 0;
     color: #616783;
+  }
+
+  a {
+    text-transform: uppercase;
+    color: #d84dc7;
+    transition: 0.3s;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 `;

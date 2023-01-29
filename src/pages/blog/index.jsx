@@ -11,7 +11,7 @@ import {
   Post,
 } from "./styles";
 import Link from "next/link";
-import { AiFillClockCircle } from "react-icons/ai";
+import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
 
 import { SliceZone } from "@prismicio/react";
 import { components } from "../../../slices";
@@ -43,12 +43,14 @@ export default function Blog({ articles }) {
         {articles.map((article) => (
           <Post key={article.id}>
             <ImageContainer>
-              <Image
-                src={article.data?.image.url}
-                alt={article.data.image?.alt}
-                width={500}
-                height={500}
-              />
+              <PrismicLink document={article}>
+                <Image
+                  src={article.data?.image.url}
+                  alt={article.data.image?.alt}
+                  width={500}
+                  height={500}
+                />
+              </PrismicLink>
             </ImageContainer>
             <Content>
               <span>
@@ -62,11 +64,9 @@ export default function Blog({ articles }) {
               </h3>
               <p>{getExcertp(article.data)}</p>
 
-              {
-                //<SliceZone slices={article.data.slices} components={components} />
-              }
-
-              <Link href="/">READ MORE</Link>
+              <PrismicLink document={article}>
+                Read More <AiOutlineRight />
+              </PrismicLink>
             </Content>
           </Post>
         ))}
