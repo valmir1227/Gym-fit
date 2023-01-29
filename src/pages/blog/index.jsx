@@ -19,11 +19,11 @@ import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
 
 export default function Blog({ articles }) {
-
-   const getExcertp = (text) => {
-    if (!text) return "";
-    let finalExcerpt = text.slice(0, 300);
-    if (finalExcerpt.length < text.length) {
+  const getExcertp = (text) => {
+    if (!text || !Array.isArray(text.excerpt) || !text.excerpt[0]?.text)
+      return "";
+    let finalExcerpt = text.excerpt[0].text.slice(0, 300);
+    if (finalExcerpt.length < text.excerpt[0].text.length) {
       let lastSpace = finalExcerpt.lastIndexOf(" ");
       finalExcerpt = finalExcerpt.slice(0, lastSpace) + "...";
     }
@@ -60,7 +60,7 @@ export default function Blog({ articles }) {
                   <PrismicRichText field={article.data.title} />
                 </PrismicLink>
               </h3>
-              <p>{getExcertp(article.data?.excerpt[0]?.text)}</p>
+              <p>{getExcertp(article.data)}</p>
 
               {
                 //<SliceZone slices={article.data.slices} components={components} />

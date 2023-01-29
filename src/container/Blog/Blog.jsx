@@ -9,11 +9,11 @@ import { dateFormatter } from "utils/dateFormater";
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
 
 export default function Blog({ articles }) {
-  console.log(articles[0].data);
   const getExcertp = (text) => {
-    if (!text) return "";
-    let finalExcerpt = text.slice(0, 300);
-    if (finalExcerpt.length < text.length) {
+    if (!text || !Array.isArray(text.excerpt) || !text.excerpt[0]?.text)
+      return "";
+    let finalExcerpt = text.excerpt[0].text.slice(0, 300);
+    if (finalExcerpt.length < text.excerpt[0].text.length) {
       let lastSpace = finalExcerpt.lastIndexOf(" ");
       finalExcerpt = finalExcerpt.slice(0, lastSpace) + "...";
     }
@@ -61,10 +61,10 @@ export default function Blog({ articles }) {
           {articles.map((article) => (
             <SwiperSlide key={article.id} className="swiperArticle">
               <Card
-                content={getExcertp(article.data?.excerpt[0]?.text)}
+                content={getExcertp(article.data)}
                 image={article.data?.image.url}
                 publishDate={article.data.firstPublicationDate}
-                title={<PrismicRichText field={article.data.title} />}
+                title={article.data.title[0].text}
               />
             </SwiperSlide>
           ))}

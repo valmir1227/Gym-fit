@@ -53,9 +53,9 @@ export default function Trainers({ trainers }) {
                 role={trainer.data.role[0].text}
                 name={trainer.data.name[0].text}
                 image={trainer.data.profile.url}
-                instagram={trainer.data.instagram.url}
-                tiktok={trainer.data.tiktok.url}
-                facebook={trainer.data.fcebook.url}
+                instagram={trainer.data?.instagram?.url}
+                tiktok={trainer.data?.tiktok?.url}
+                facebook={trainer.data?.fcebook?.url}
                 description={trainer.data.description[0].text}
               />
             </SwiperSlide>
