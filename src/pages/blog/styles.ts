@@ -45,7 +45,7 @@ export const Header = styled.div`
     font-weight: 500;
 
     &:hover {
-      color: #d84dc7;
+      color: #9258f9;
     }
   }
 `;

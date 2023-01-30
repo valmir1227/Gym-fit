@@ -1,21 +1,20 @@
 import Head from "next/head";
 import { createClient } from "../../../prismicio";
 import * as prismicH from "@prismicio/helpers";
-import { SliceZone } from "@prismicio/react";
+import { PrismicLink, PrismicRichText, SliceZone } from "@prismicio/react";
 import { components } from "../../../slices";
 import styled from "styled-components";
 import { device } from "../../../styles/devices";
 import BlogDtailBg from "../../assets/blog-dtails.png";
 import Link from "next/link";
 import Image from "next/image";
+import { AiFillClockCircle } from "react-icons/ai";
+import { dateFormatter } from "utils/dateFormater";
+import Title from "components/Title/Title";
 
 export const Container = styled.section`
   width: 100%;
   color: #000;
-  img {
-    width: 300px;
-    height: 300px;
-  }
 `;
 
 export const Header = styled.div`
@@ -56,13 +55,93 @@ export const Header = styled.div`
     text-transform: uppercase;
     font-weight: 500;
     &:hover {
-      color: #d84dc7;
+      color: #9258f9;
     }
   }
 `;
 
-const Article = ({ article }) => {
-  console.log(article);
+export const Post = styled.main`
+  width: 70%;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #616783;
+    margin: 1.5rem 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #9258f9;
+    margin: 1rem;
+  }
+
+  @media ${device.mobileS} {
+    padding: 1rem 1rem 7rem;
+  }
+
+  @media ${device.tablet} {
+    padding: 3rem 3rem 7em;
+  }
+
+  @media ${device.laptop} {
+    padding: 3rem 7rem 7rem;
+  }
+`;
+
+export const PostImg = styled.div`
+  width: 800px;
+  height: 400px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+  }
+`;
+
+export const Content = styled.section`
+  display: flex;
+
+  section {
+    width: 100%;
+  }
+`;
+
+export const LtsArticles = styled.main`
+  width: 90%;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.7s;
+  text-transform: uppercase;
+
+  img {
+    border-radius: 3px;
+  }
+
+  a {
+    color: #000;
+  }
+
+  &:hover {
+    box-shadow: 1px 1px 6px 2px rgba(252, 101, 252, 0.55);
+
+    h1 {
+      color: #9258f9;
+      transition: all 0.6s;
+    }
+  }
+`;
+
+const Article = ({ article, latestArticles }) => {
+  console.log(latestArticles);
   return (
     <Container>
       <Head>
@@ -72,18 +151,41 @@ const Article = ({ article }) => {
         <h1>BLOG DETAIL</h1>
         <Link href="/">Home</Link>
       </Header>
-      <main>
-        <div className="postimage">
-          <Image
-            src={article.data?.image.url}
-            width={500}
-            height={500}
-            alt=""
-          />
-        </div>
-        <span>{article.data.publishdate}</span>
-        <SliceZone slices={article.data.slices} components={components} />
-      </main>
+      <Content>
+        <Post>
+          <PostImg>
+            <Image
+              src={article.data?.image.url}
+              width={500}
+              height={500}
+              alt=""
+            />
+          </PostImg>
+          <span>
+            <AiFillClockCircle color="#D471B0" />
+            {dateFormatter.format(article.data.firstPublicationDate)}
+          </span>
+          <SliceZone slices={article.data.slices} components={components} />
+        </Post>
+        <section>
+          <Title textPrimary="Recent" textSecondary="Posts" />
+          <main>
+            {latestArticles.map((latestArticle) => (
+              <LtsArticles key={latestArticle.id}>
+                <Image
+                  src={latestArticle.data?.image.url}
+                  alt=""
+                  width={180}
+                  height={100}
+                />
+                <PrismicLink document={latestArticle}>
+                  <PrismicRichText field={latestArticle.data.title} />
+                </PrismicLink>
+              </LtsArticles>
+            ))}
+          </main>
+        </section>
+      </Content>
     </Container>
   );
 };
@@ -93,12 +195,18 @@ export default Article;
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  console.log(params.uid);
   const article = await client.getByUID("article", params.uid);
+  const latestArticles = await client.getAllByType("article", {
+    orderings: [
+      { field: "my.article.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
 
   return {
     props: {
       article,
+      latestArticles,
     },
   };
 }
