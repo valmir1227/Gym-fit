@@ -30,6 +30,10 @@ export default function Blog({ articles }) {
     return finalExcerpt;
   };
 
+  if (!articles) {
+    console.log("Loading");
+  }
+
   return (
     <Container>
       <Head>
@@ -89,5 +93,6 @@ export async function getStaticProps({ previewData }) {
     props: {
       articles,
     },
+    revalidate: 3600,
   };
 }

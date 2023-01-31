@@ -1,7 +1,14 @@
+
 import GlobalButton from "../../components/Button/Button";
+import Loading from "components/Loading/Loading";
 import Container from "./styles";
 
+
 export default function Home() {
+  
+
+  
+
   return (
     <Container>
       <div>

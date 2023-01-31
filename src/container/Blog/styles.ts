@@ -7,7 +7,6 @@ export const Container = styled.section`
 
   .swiper-wrapper {
     padding-bottom: 1rem;
-    justify-content: center;
   }
 
   @media ${device.mobileS} {
@@ -28,7 +27,6 @@ export const Text = styled.div`
 `;
 
 export const Cards = styled.div`
- 
   width: 100%;
   display: flex;
   margin-top: 3rem;

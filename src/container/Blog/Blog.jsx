@@ -5,8 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import { Cards, Container, Text } from "./styles";
-import { dateFormatter } from "utils/dateFormater";
-import { PrismicLink, PrismicRichText } from "@prismicio/react";
 
 export default function Blog({ articles }) {
   const getExcertp = (text) => {

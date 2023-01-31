@@ -30,6 +30,7 @@ export async function getStaticProps({ previewData }) {
 
   const trainers = await client.getAllByType("trainers");
   const articles = await client.getAllByType("article", {
+    limit: 6,
     orderings: [
       { field: "my.article.publishDate", direction: "desc" },
       { field: "document.first_publication_date", direction: "desc" },

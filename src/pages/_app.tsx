@@ -7,8 +7,17 @@ import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../../prismicio";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Loading from "components/Loading/Loading";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [isLoading, setIsloading] = useState(true);
+  useEffect(() => {
+    setIsloading(false);
+  }, []);
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <>
       <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
