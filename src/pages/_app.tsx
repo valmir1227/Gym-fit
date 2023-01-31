@@ -13,7 +13,9 @@ import Loading from "components/Loading/Loading";
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsloading] = useState(true);
   useEffect(() => {
-    setIsloading(false);
+    setTimeout(() => {
+      setIsloading(false);
+    }, 500);
   }, []);
   if (isLoading) {
     return <Loading />;

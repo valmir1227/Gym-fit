@@ -141,14 +141,13 @@ export const LtsArticles = styled.main`
 `;
 
 const Article = ({ article, latestArticles }) => {
-  console.log(latestArticles);
   return (
     <Container>
       <Head>
         <title>{article.uid}</title>
       </Head>
       <Header>
-        <h1>BLOG DETAIL</h1>
+        <h1>BLOG DETAILS</h1>
         <Link href="/">Home</Link>
       </Header>
       <Content>
@@ -195,13 +194,15 @@ export default Article;
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const article = await client.getByUID("article", params.uid);
-  const latestArticles = await client.getAllByType("article", {
-    orderings: [
-      { field: "my.article.publishDate", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-  });
+  const [article, latestArticles] = await Promise.all([
+    client.getByUID("article", params.uid),
+    client.getAllByType("article", {
+      orderings: [
+        { field: "my.article.publishDate", direction: "desc" },
+        { field: "document.first_publication_date", direction: "desc" },
+      ],
+    }),
+  ]);
 
   return {
     props: {

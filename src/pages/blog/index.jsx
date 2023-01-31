@@ -30,10 +30,6 @@ export default function Blog({ articles }) {
     return finalExcerpt;
   };
 
-  if (!articles) {
-    console.log("Loading");
-  }
-
   return (
     <Container>
       <Head>
