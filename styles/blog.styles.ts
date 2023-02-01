@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { device } from "../../../styles/devices";
-import BlogBg from "../../assets/blog-bg-img.png";
+import { device } from "./devices";
+import BlogBg from "../src/assets/blog-bg-img.png";
 
 export const Container = styled.section`
   width: 100%;

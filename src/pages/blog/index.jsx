@@ -8,7 +8,7 @@ import {
   Header,
   ImageContainer,
   Post,
-} from "./styles";
+} from "../../../styles/blog.styles";
 import Link from "next/link";
 import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
 
