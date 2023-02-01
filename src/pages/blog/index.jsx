@@ -14,6 +14,7 @@ import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
 
 import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
+import { useEffect, useState } from "react";
 
 export default function Blog({ articles }) {
   const getExcertp = (text) => {
@@ -27,6 +28,20 @@ export default function Blog({ articles }) {
     return finalExcerpt;
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [articlesToDisplay, setArticlesToDisplay] = useState([]);
+  const articlesPerPage = 4;
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+  useEffect(() => {
+    setArticlesToDisplay(
+      articles.slice(
+        (currentPage - 1) * articlesPerPage,
+        currentPage * articlesPerPage
+      )
+    );
+  }, [currentPage, articles]);
+
   return (
     <Container>
       <Head>
@@ -37,7 +52,7 @@ export default function Blog({ articles }) {
         <Link href="/">Home</Link>
       </Header>
       <Articles>
-        {articles.map((article) => (
+        {articlesToDisplay.map((article) => (
           <Post key={article.id}>
             <ImageContainer>
               <PrismicLink document={article}>
@@ -67,6 +82,17 @@ export default function Blog({ articles }) {
             </Content>
           </Post>
         ))}
+        {currentPage > 1 && (
+          <button onClick={() => setCurrentPage(currentPage - 1)}>
+            Anterior
+          </button>
+        )}
+        <h1>{currentPage}</h1>
+        {currentPage < totalPages && (
+          <button onClick={() => setCurrentPage(currentPage + 1)}>
+            Próximo
+          </button>
+        )}
       </Articles>
     </Container>
   );
