@@ -30,6 +30,11 @@ export default function App({ Component, pageProps }: AppProps) {
           <Footer />
         </PrismicPreview>
       </PrismicProvider>
+      <script
+        async
+        defer
+        src="https://static.cdn.prismic.io/prismic.js?new=true&repo=gymfit"
+      ></script>
     </>
   );
 }

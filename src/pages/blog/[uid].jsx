@@ -8,7 +8,7 @@ import { device } from "../../../styles/devices";
 import BlogDtailBg from "../../assets/blog-dtails.png";
 import Link from "next/link";
 import Image from "next/image";
-import { AiFillClockCircle } from "react-icons/ai";
+import { AiFillCalendar, AiFillClockCircle } from "react-icons/ai";
 import { dateFormatter } from "utils/dateFormater";
 import Title from "components/Title/Title";
 
@@ -189,13 +189,13 @@ const Article = ({ article, latestArticles }) => {
           <PostImg>
             <Image
               src={article.data?.image.url}
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
               alt=""
             />
           </PostImg>
           <span>
-            <AiFillClockCircle color="#D471B0" />
+            <AiFillCalendar color="#D471B0" />
             {dateFormatter.format(article.data.firstPublicationDate)}
           </span>
           <SliceZone slices={article.data.slices} components={components} />

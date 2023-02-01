@@ -1,5 +1,4 @@
 import Head from "next/head";
-import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../../prismicio";
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import {
@@ -13,8 +12,6 @@ import {
 import Link from "next/link";
 import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
 
-import { SliceZone } from "@prismicio/react";
-import { components } from "../../../slices";
 import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
 
@@ -75,7 +72,7 @@ export default function Blog({ articles }) {
   );
 }
 
-export async function getStaticProps({ previewData }) {
+export async function getStaticProps({ previewData, params }) {
   const client = createClient({ previewData });
 
   const articles = await client.getAllByType("article", {
