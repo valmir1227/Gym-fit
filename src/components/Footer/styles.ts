@@ -21,6 +21,7 @@ export const Container = styled.footer`
   }
   @media ${device.mobileS} {
     padding: 0 1rem;
+    margin-top: 4rem;
   }
   @media ${device.tablet} {
     padding: 0 3rem;

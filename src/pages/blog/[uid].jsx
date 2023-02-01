@@ -15,6 +15,19 @@ import Title from "components/Title/Title";
 export const Container = styled.section`
   width: 100%;
   color: #000;
+
+  .divider {
+    width: 100%;
+    height: 4px;
+    margin-top: 1.5rem;
+    background: #9757f6;
+    background: radial-gradient(
+      circle,
+      #9757f6cc 10%,
+      #dd59be99 66%,
+      rgba(232, 120, 156, 0) 100%
+    );
+  }
 `;
 
 export const Header = styled.div`
@@ -61,7 +74,7 @@ export const Header = styled.div`
 `;
 
 export const Post = styled.main`
-  width: 70%;
+  width: 70vw;
 
   span {
     display: flex;
@@ -76,24 +89,26 @@ export const Post = styled.main`
   h3,
   h4 {
     color: #9258f9;
-    margin: 1rem;
+    margin: 1rem 0;
   }
 
   @media ${device.mobileS} {
-    padding: 1rem 1rem 7rem;
+    width: 100%;
+    padding: 1rem 1rem 0;
   }
 
   @media ${device.tablet} {
-    padding: 3rem 3rem 7em;
+    padding: 3rem 3rem;
+    width: 100vw;
   }
 
   @media ${device.laptop} {
-    padding: 3rem 7rem 7rem;
+    padding: 3rem;
   }
 `;
 
 export const PostImg = styled.div`
-  width: 800px;
+  width: 100%;
   height: 400px;
 
   img {
@@ -101,18 +116,37 @@ export const PostImg = styled.div`
     height: 100%;
     border-radius: 2px;
   }
+
+  @media ${device.mobileS} {
+    height: 200px;
+  }
+
+  @media ${device.mobileL} {
+    height: 300px;
+  }
+  @media ${device.tablet} {
+    height: 400px;
+  }
 `;
 
 export const Content = styled.section`
   display: flex;
+  width: 100vw;
 
   section {
-    width: 100%;
+    height: fit-content;
+  }
+  @media ${device.mobileS} {
+    flex-direction: column;
+  }
+
+  @media ${device.laptop} {
+    flex-direction: row;
   }
 `;
 
 export const LtsArticles = styled.main`
-  width: 90%;
+  width: 95%;
   display: flex;
   gap: 10px;
   margin-bottom: 1rem;
@@ -165,6 +199,7 @@ const Article = ({ article, latestArticles }) => {
             {dateFormatter.format(article.data.firstPublicationDate)}
           </span>
           <SliceZone slices={article.data.slices} components={components} />
+          <div className="divider"></div>
         </Post>
         <section>
           <Title textPrimary="Recent" textSecondary="Posts" />
@@ -197,6 +232,7 @@ export async function getStaticProps({ params, previewData }) {
   const [article, latestArticles] = await Promise.all([
     client.getByUID("article", params.uid),
     client.getAllByType("article", {
+      limit: 7,
       orderings: [
         { field: "my.article.publishDate", direction: "desc" },
         { field: "document.first_publication_date", direction: "desc" },
