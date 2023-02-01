@@ -7,6 +7,7 @@ import {
   Content,
   Header,
   ImageContainer,
+  Pagination,
   Post,
 } from "../../../styles/blog.styles";
 import Link from "next/link";
@@ -15,6 +16,9 @@ import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
 import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
 import { useEffect, useState } from "react";
+
+
+
 
 export default function Blog({ articles }) {
   const getExcertp = (text) => {
@@ -30,7 +34,7 @@ export default function Blog({ articles }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesToDisplay, setArticlesToDisplay] = useState([]);
-  const articlesPerPage = 4;
+  const articlesPerPage = 3;
   const totalPages = Math.ceil(articles.length / articlesPerPage);
 
   useEffect(() => {
@@ -82,18 +86,21 @@ export default function Blog({ articles }) {
             </Content>
           </Post>
         ))}
+      </Articles>
+      <Pagination>
         {currentPage > 1 && (
           <button onClick={() => setCurrentPage(currentPage - 1)}>
-            Anterior
+            Previous
           </button>
         )}
-        <h1>{currentPage}</h1>
+        {currentPage > 1 && currentPage < totalPages && (
+          <span>{currentPage}</span>
+        )}
+
         {currentPage < totalPages && (
-          <button onClick={() => setCurrentPage(currentPage + 1)}>
-            Próximo
-          </button>
+          <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
         )}
-      </Articles>
+      </Pagination>
     </Container>
   );
 }

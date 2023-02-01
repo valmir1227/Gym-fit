@@ -65,12 +65,12 @@ export const Articles = styled.main`
   }
 
   @media ${device.tablet} {
-    padding: 0 3rem 7em;
+    padding: 0 3rem 3em;
     justify-content: center;
   }
 
   @media ${device.laptop} {
-    padding: 0 7rem 7rem;
+    padding: 0 7rem 3rem;
     justify-content: flex-start;
   }
 `;
@@ -138,5 +138,42 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     gap: 5px;
+  }
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 6rem;
+
+  button {
+    padding: 0.5rem 1.6rem;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    color: #616783;
+    background: #f5f5f5;
+
+    &:hover {
+      color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      background: rgb(151, 87, 246);
+      background: linear-gradient(
+        120deg,
+        rgba(151, 87, 246, 1) 0%,
+        rgba(221, 89, 190, 1) 46%,
+        rgba(232, 120, 156, 1) 100%
+      );
+    }
+  }
+  span {
+    padding: 0.5rem 1rem;
+    border-radius: 100%;
+    background: #f5f5f5;
+    display: block;
+    color: #616783;
+    font-weight: 600;
   }
 `;
