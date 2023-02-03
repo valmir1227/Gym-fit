@@ -17,9 +17,6 @@ import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
 import { useEffect, useState } from "react";
 
-
-
-
 export default function Blog({ articles }) {
   const getExcertp = (text) => {
     if (!text || !Array.isArray(text.excerpt) || !text.excerpt[0]?.text)

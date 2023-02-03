@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 87.5%;
   }
 }
+
 body,
 input,
 textarea,
@@ -31,6 +32,12 @@ button {
   body {
   color: #FFF;
   overflow-x: hidden;
+  ::-webkit-scrollbar {
+     width: 10px;
+} 
+::-webkit-scrollbar-thumb {   
+background-color: #E176DD;   
+}
   }
   
   ul {
