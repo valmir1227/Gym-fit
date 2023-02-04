@@ -6,7 +6,17 @@ import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import { Cards, Container, Text } from "./styles";
 
-export default function Blog() {
+export default function Blog({ articles }) {
+  const getExcertp = (text) => {
+    if (!text || !Array.isArray(text.excerpt) || !text.excerpt[0]?.text)
+      return "";
+    let finalExcerpt = text.excerpt[0].text.slice(0, 300);
+    if (finalExcerpt.length < text.excerpt[0].text.length) {
+      let lastSpace = finalExcerpt.lastIndexOf(" ");
+      finalExcerpt = finalExcerpt.slice(0, lastSpace) + "...";
+    }
+    return finalExcerpt;
+  };
   return (
     <Container>
       <Text>
@@ -46,25 +56,16 @@ export default function Blog() {
           modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
+          {articles.map((article) => (
+            <SwiperSlide key={article.id} className="swiperArticle">
+              <Card
+                content={getExcertp(article.data)}
+                image={article.data?.image.url}
+                publishDate={article.data.firstPublicationDate}
+                title={article.data.title[0].text}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Cards>
     </Container>

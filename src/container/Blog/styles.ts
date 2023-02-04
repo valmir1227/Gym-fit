@@ -7,7 +7,6 @@ export const Container = styled.section`
 
   .swiper-wrapper {
     padding-bottom: 1rem;
-    justify-content: center;
   }
 
   @media ${device.mobileS} {

@@ -1,0 +1,12 @@
+{
+  "slices": {
+    "Content": {
+      "default": {
+        "primary": {}
+      }
+    }
+  },
+  "_cts": {
+    "text": {}
+  }
+}

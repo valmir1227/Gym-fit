@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["github.com", "img.freepik.com", "http://localhost:3000/"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**prismic.io",
+      },
+    ],
   },
 };
 
