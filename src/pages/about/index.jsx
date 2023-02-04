@@ -1,5 +1,8 @@
 import GlobalButton from "components/Button/Button";
 import Title from "components/Title/Title";
+import Courses from "container/Courses/Courses";
+import Explore from "container/Explore/Explore";
+import Trainers from "container/Trainers/Trainers";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +13,7 @@ import aboutBgImg from "../../assets/about-bg-img.png";
 import aboutImg1 from "../../assets/about-img-1.png";
 import aboutImg2 from "../../assets/about-img-2.png";
 import aboutImg3 from "../../assets/about-img-3.png";
+import testimonials3 from "../../assets/testimonials-img-3.png";
 
 export const Container = styled.section`
   width: 100%;
@@ -170,7 +174,6 @@ export const Text = styled.div`
 
 export const Section = styled.section`
   width: 100vw;
-  height: 80vh;
   display: flex;
   padding: 3rem 7rem 0;
   background: linear-gradient(
@@ -261,6 +264,54 @@ export const Section = styled.section`
     padding: 3rem 7rem 0;
   }
 `;
+
+export const Clients = styled.section`
+  color: #fff;
+  .text {
+    p {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #616783;
+    }
+  }
+
+  .clients-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 6rem;
+    gap: 10px;
+
+    .card-container {
+      width: 450px;
+      padding: 1rem;
+      background: #fff;
+      text-align: center;
+      font-size: 0.9rem;
+      display: flex;
+      cursor: pointer;
+      box-shadow: rgba(161, 7, 102, 0.2) 0px 8px 24px;
+    }
+
+    .card-text {
+      color: #616783;
+      h3 {
+        color: #9258f9;
+      }
+    }
+
+    .card-picture {
+      width: 50px;
+      height: 50px;
+      margin: 1rem auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+`;
 export default function About() {
   return (
     <Container>
@@ -320,6 +371,68 @@ export default function About() {
           <Image src={aboutImg2} alt="" width={600} height={500} />
         </div>
       </Section>
+
+      <Clients>
+        <div className="text">
+          <Title textPrimary="What " textSecondary="Client's Say" />
+          <p>
+            Quisque ullamcorper ex non leo blandit porta. Duis purus sapien,
+            blandit non sem quis,
+            <br /> mollis vehicula sapien.
+          </p>
+        </div>
+        <div className="clients-card-container">
+          <div className="card-container">
+            <div className="card-text">
+              <p>
+                Quot Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dignissimos distinctio sit blanditiis similique possimus
+                consequuntur ipsam fuga
+              </p>
+
+              <div className="card-picture">
+                <Image src={testimonials3} alt="" width={400} height={400} />
+              </div>
+              <h3>Inessa Doe</h3>
+              <p>Executive Chef</p>
+            </div>
+          </div>
+
+          <div className="card-container">
+            <div className="card-text">
+              <p>
+                Quot Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dignissimos distinctio sit blanditiis similique possimus
+                consequuntur ipsam fuga
+              </p>
+
+              <div className="card-picture">
+                <Image src={testimonials3} alt="" width={400} height={400} />
+              </div>
+              <h3>Inessa Doe</h3>
+              <p>Executive Chef</p>
+            </div>
+          </div>
+
+          <div className="card-container">
+            <div className="card-text">
+              <p>
+                Quot Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dignissimos distinctio sit blanditiis similique possimus
+                consequuntur ipsam fuga
+              </p>
+
+              <div className="card-picture">
+                <Image src={testimonials3} alt="" width={400} height={400} />
+              </div>
+              <h3>Inessa Doe</h3>
+              <p>Executive Chef</p>
+            </div>
+          </div>
+        </div>
+        <Explore />
+        <Courses/>
+      </Clients>
     </Container>
   );
 }
