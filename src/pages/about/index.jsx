@@ -350,7 +350,7 @@ export default function About() {
         <Swiper
           centeredSlides={false}
           autoplay={{
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           slidesPerView={"auto"}

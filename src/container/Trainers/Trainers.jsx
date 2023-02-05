@@ -24,7 +24,7 @@ export default function Trainers({ trainers }) {
           slidesPerView={1}
           spaceBetween={10}
           autoplay={{
-            delay: 2500,
+            delay: 1000,
             disableOnInteraction: false,
           }}
           pagination={{
