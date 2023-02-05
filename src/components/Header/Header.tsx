@@ -12,7 +12,7 @@ export default function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
-    setWinSize(window.innerWidth);
+    window.addEventListener("resize", () => setWinSize(window.innerWidth));
   }, []);
 
   return (

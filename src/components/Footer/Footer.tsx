@@ -90,13 +90,13 @@ export default function Footer() {
       <SciContainer>
         <p>&copy; 2022 ValmirAlmeidaDev</p>
         <div>
-          <Link href="">
+          <Link href="https://www.instagram.com/valmiralmeidadev/">
             <Image src={InstagramImg} alt="" />
           </Link>
-          <Link href="">
+          <Link href="https://www.facebook.com/valmir.almeida.5454/">
             <Image src={FacebookImg} alt="" />
           </Link>
-          <Link href="">
+          <Link href="https://github.com/valmir1227">
             <Image src={GithubImg} alt="" />
           </Link>
         </div>
