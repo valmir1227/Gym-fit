@@ -135,6 +135,8 @@ export const Content = styled.section`
 
   section {
     height: fit-content;
+    position: sticky;
+    top: 0;
   }
   @media ${device.mobileS} {
     flex-direction: column;

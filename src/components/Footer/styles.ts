@@ -51,6 +51,7 @@ export const Form = styled.div`
     border-radius: 30px;
     position: relative;
     box-shadow: 0px 2px 6px 1px rgba(228, 118, 160, 0.7);
+    cursor: pointer;
 
     input {
       width: 100%;

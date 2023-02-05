@@ -42,27 +42,27 @@ export default function Header() {
             {toggleMenu && (
               <nav>
                 <Link href="/">
-                  <li className="active">Home</li>
+                  <li>Home</li>
                 </Link>
                 <Link href="/about">
                   <li>About us</li>
                 </Link>
 
-                <Link href="/">
+                <Link href="/courses">
                   <li>Courses</li>
                 </Link>
-                <Link href="/">
+                <Link href="/schedule">
                   <li>Schedule</li>
                 </Link>
-                <Link href="/">
+                <Link href="/blog">
                   <li>Blog</li>
                 </Link>
-                <Link href="/">
-                  <li>Pages</li>
+                <Link href="/trainers">
+                  <li>Trainers</li>
                 </Link>
                 <GlobalButton
                   variant="primary"
-                  href="/about"
+                  href="/get"
                   text="Get in Toutch"
                 />
               </nav>

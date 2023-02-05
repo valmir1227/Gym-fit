@@ -50,13 +50,13 @@ export default function Trainers({ trainers }) {
           {trainers.map((trainer) => (
             <SwiperSlide key={trainer.id}>
               <Card
-                role={trainer.data.role[0].text}
-                name={trainer.data.name[0].text}
-                image={trainer.data.profile.url}
-                instagram={trainer.data?.instagram?.url}
-                tiktok={trainer.data?.tiktok?.url}
-                facebook={trainer.data?.fcebook?.url}
-                description={trainer.data.description[0].text}
+                role={trainer.data?.role[0].text}
+                name={trainer.data?.name[0].text}
+                image={trainer.data?.profile.url}
+                instagram={trainer.data?.instagram.url}
+                tiktok={trainer.data?.tiktok.url}
+                facebook={trainer.data?.fcebook.url}
+                description={trainer.data?.description[0].text}
               />
             </SwiperSlide>
           ))}

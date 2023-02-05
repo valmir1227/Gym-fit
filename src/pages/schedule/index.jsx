@@ -58,10 +58,10 @@ export default function index() {
   return (
     <Container>
       <Head>
-        <title>GYMFIT | COURSES </title>
+        <title>GYMFIT | SCHEDULE </title>
       </Head>
       <Header>
-        <h1>TRAINERS</h1>
+        <h1>SCHEDULE</h1>
         <Link href="/">Home</Link>
       </Header>
       <Timetable />

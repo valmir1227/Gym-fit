@@ -25,7 +25,9 @@ export default function Footer() {
         <div>
           <input type="email" placeholder="Your Email..." />
           <div>
-            <Image src={PaperPlane} alt="" />
+            <Link href="/contact">
+              <Image src={PaperPlane} alt="" />
+            </Link>
           </div>
         </div>
         <p>Get latest updates for latest courses</p>
@@ -40,23 +42,23 @@ export default function Footer() {
         </p>
         <nav>
           <Link href="/">
-            <li className="active">Home</li>
+            <li>Home</li>
           </Link>
-          <Link href="/">
+          <Link href="/about">
             <li>About us</li>
           </Link>
 
-          <Link href="/">
+          <Link href="/courses">
             <li>Courses</li>
           </Link>
-          <Link href="/">
+          <Link href="/schedule">
             <li>Schedule</li>
           </Link>
-          <Link href="/">
+          <Link href="/blog">
             <li>Blog</li>
           </Link>
-          <Link href="/">
-            <li>Pages</li>
+          <Link href="/trainers">
+            <li>Trainers</li>
           </Link>
         </nav>
         <p>
