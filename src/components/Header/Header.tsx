@@ -26,7 +26,7 @@ export default function Header() {
             <NavLink href="/courses" text="Courses" />
             <NavLink href="/schedule" text="Schedule" />
             <NavLink href="/blog" text="Blog" />
-            <NavLink href="/pages" text="Pages" />
+            <NavLink href="/trainers" text="Trainers" />
 
             <GlobalButton
               variant="primary"

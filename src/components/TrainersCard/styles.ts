@@ -21,7 +21,7 @@ export const Container = styled.div`
 export const Text = styled.div`
   position: absolute;
   visibility: hidden;
-
+  text-align: center;
   width: 24rem;
   height: 100%;
   display: flex;
