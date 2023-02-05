@@ -31,7 +31,7 @@ export default function Blog({ articles }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesToDisplay, setArticlesToDisplay] = useState([]);
-  const articlesPerPage = 6;
+  const articlesPerPage = 7;
   const totalPages = Math.ceil(articles.length / articlesPerPage);
 
   useEffect(() => {

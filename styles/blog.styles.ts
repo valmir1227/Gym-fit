@@ -71,7 +71,7 @@ export const Articles = styled.main`
 
   @media ${device.laptop} {
     padding: 0 7rem 3rem;
-    justify-content: flex-start;
+    justify-content: center;
   }
 `;
 
@@ -95,8 +95,8 @@ export const Post = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 400px;
-  height: 300px;
+  width: 26, 6rem;
+  height: 20rem;
   cursor: pointer;
 
   img {

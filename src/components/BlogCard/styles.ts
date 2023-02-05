@@ -24,7 +24,13 @@ export const Container = styled.div`
 
   div {
     width: 100%;
+    height: 20rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
     img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       width: 100%;
       height: 100%;
       object-fit: cover;

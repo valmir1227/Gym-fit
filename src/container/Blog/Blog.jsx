@@ -10,7 +10,7 @@ export default function Blog({ articles }) {
   const getExcertp = (text) => {
     if (!text || !Array.isArray(text.excerpt) || !text.excerpt[0]?.text)
       return "";
-    let finalExcerpt = text.excerpt[0].text.slice(0, 300);
+    let finalExcerpt = text.excerpt[0].text.slice(0, 250);
     if (finalExcerpt.length < text.excerpt[0].text.length) {
       let lastSpace = finalExcerpt.lastIndexOf(" ");
       finalExcerpt = finalExcerpt.slice(0, lastSpace) + "...";
