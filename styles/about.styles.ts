@@ -6,6 +6,10 @@ import aboutImg3 from "../src/assets/about-img-3.png";
 export const Container = styled.section`
   width: 100%;
   color: #000;
+
+  .courses-container {
+    background-colore
+  }
 `;
 
 export const Header = styled.div`
