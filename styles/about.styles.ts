@@ -216,10 +216,10 @@ export const Section = styled.section`
 
   .choose-us-img {
     width: 40%;
-    height: 90%;
+    height: 100%;
     align-self: flex-end;
     img {
-      object-fit: cover;
+      object-fit: contain;
       width: 100%;
       height: 100%;
       position: relative;

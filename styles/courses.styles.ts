@@ -3,6 +3,10 @@ import courseBg from "../src/assets/course-bg-img.png";
 
 export const Container = styled.section`
   width: 100%;
+
+  .courses-container {
+    background: #fff;
+  }
 `;
 
 export const Header = styled.div`

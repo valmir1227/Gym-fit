@@ -4,7 +4,7 @@ import { CardConTainer, Container, Text } from "./styles";
 
 export default function Timetable() {
   return (
-    <Container className="a">
+    <Container className="timatable-container">
       <Text>
         <Title textPrimary="Our" textSecondary="Timetable" />
         <p>

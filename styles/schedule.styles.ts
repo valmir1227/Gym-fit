@@ -3,6 +3,9 @@ import scheduleBg from "../src/assets/schedule-bg-img.png";
 
 export const Container = styled.section`
   width: 100%;
+  .timatable-container {
+    background: #fff;
+  }
 `;
 
 export const Header = styled.div`

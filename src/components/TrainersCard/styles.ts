@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 20rem;
   height: 30rem;
   border-radius: 10px;
   transition: all 0.3s ease;

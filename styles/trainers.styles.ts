@@ -1,17 +1,30 @@
 import styled from "styled-components";
 import teamBg from "../src/assets/team-bg-img.png";
+import { device } from "./devices";
 
 export const Container = styled.section`
-  width: 100%;
+  width: 100vw;
 
   main {
     width: 100%;
-    padding: 3rem;
+    padding: 3rem 7rem;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
-    row-gap: 2rem;
+    gap: 2rem;
+
+    @media ${device.mobileS} {
+      padding: 3rem 1rem;
+
+      justify-content: center;
+    }
+
+    @media ${device.tablet} {
+      padding: 3rem;
+    }
+
+    @media ${device.laptop} {
+      padding: 3rem 7rem;
+    }
   }
 `;
 

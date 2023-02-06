@@ -20,7 +20,7 @@ export default function index({ trainers }) {
             key={trainer.id}
             role={trainer.data?.role[0].text}
             name={trainer.data.name[0].text}
-            image={trainer.data.profile.url}
+            image={trainer.data?.profile.url}
             instagram={trainer.data?.instagram?.url}
             tiktok={trainer.data?.tiktok?.url}
             facebook={trainer.data?.fcebook?.url}

@@ -45,7 +45,7 @@ export default function Footer() {
             <li>Home</li>
           </Link>
           <Link href="/about">
-            <li>About us</li>
+            <li>About</li>
           </Link>
 
           <Link href="/courses">
@@ -56,9 +56,6 @@ export default function Footer() {
           </Link>
           <Link href="/blog">
             <li>Blog</li>
-          </Link>
-          <Link href="/trainers">
-            <li>Trainers</li>
           </Link>
         </nav>
         <p>
@@ -90,13 +87,19 @@ export default function Footer() {
       <SciContainer>
         <p>&copy; 2022 ValmirAlmeidaDev</p>
         <div>
-          <Link href="https://www.instagram.com/valmiralmeidadev/">
+          <Link
+            href="https://www.instagram.com/valmiralmeidadev/"
+            target="_blank"
+          >
             <Image src={InstagramImg} alt="" />
           </Link>
-          <Link href="https://www.facebook.com/valmir.almeida.5454/">
+          <Link
+            href="https://www.facebook.com/valmir.almeida.5454/"
+            target="_blank"
+          >
             <Image src={FacebookImg} alt="" />
           </Link>
-          <Link href="https://github.com/valmir1227">
+          <Link href="https://github.com/valmir1227" target="_blank">
             <Image src={GithubImg} alt="" />
           </Link>
         </div>
