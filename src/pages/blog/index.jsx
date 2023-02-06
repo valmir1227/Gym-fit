@@ -1,6 +1,11 @@
+import Link from "next/link";
 import Head from "next/head";
-import { createClient } from "../../../prismicio";
+import Image from "next/image";
+
+import { useEffect, useState } from "react";
+
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
+import { createClient } from "../../../prismicio";
 import {
   Articles,
   Container,
@@ -10,12 +15,8 @@ import {
   Pagination,
   Post,
 } from "../../../styles/blog.styles";
-import Link from "next/link";
-import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
-
-import Image from "next/image";
 import { dateFormatter } from "utils/dateFormater";
-import { useEffect, useState } from "react";
+import { AiFillClockCircle, AiOutlineRight } from "react-icons/ai";
 
 export default function Blog({ articles }) {
   const getExcertp = (text) => {
@@ -31,7 +32,7 @@ export default function Blog({ articles }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesToDisplay, setArticlesToDisplay] = useState([]);
-  const articlesPerPage = 7;
+  const articlesPerPage = 3;
   const totalPages = Math.ceil(articles.length / articlesPerPage);
 
   useEffect(() => {

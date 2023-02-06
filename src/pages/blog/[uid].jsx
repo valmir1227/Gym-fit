@@ -14,7 +14,7 @@ import Title from "components/Title/Title";
 
 export const Container = styled.section`
   width: 100%;
-  color: #000;
+  color: #616783;
 
   .divider {
     width: 100%;
@@ -135,6 +135,8 @@ export const Content = styled.section`
 
   section {
     height: fit-content;
+    position: sticky;
+    top: 0;
   }
   @media ${device.mobileS} {
     flex-direction: column;
@@ -161,11 +163,11 @@ export const LtsArticles = styled.main`
   }
 
   a {
-    color: #000;
+    color: #616783;
   }
 
   &:hover {
-    box-shadow: 1px 1px 6px 2px rgba(252, 101, 252, 0.55);
+    box-shadow: 0px 0px 18px -1px rgba(151, 87, 246, 0.6);
 
     h1 {
       color: #9258f9;

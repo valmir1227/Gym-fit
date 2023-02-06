@@ -2,10 +2,11 @@ import styled from "styled-components";
 import VideoBg from "../../assets/video.svg";
 
 export const Container = styled.section`
+  background: rgb(232, 120, 155);
   background: linear-gradient(
-      280deg,
-      rgba(232, 120, 155, 0.8) 0%,
-      rgba(147, 88, 248, 0.8) 100%
+      -90deg,
+      rgba(232, 120, 155, 0.8) 50%,
+      rgba(147, 88, 248, 0.8) 70%
     ),
     url(${VideoBg?.src});
 

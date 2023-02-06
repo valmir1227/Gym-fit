@@ -70,8 +70,8 @@ export const Articles = styled.main`
   }
 
   @media ${device.laptop} {
-    padding: 0 7rem 3rem;
-    justify-content: center;
+    padding: 0 3rem 3rem;
+    justify-content: flex-start;
   }
 `;
 

@@ -1,9 +1,8 @@
-import Card from "components/BlogCard/Card";
-import Title from "components/Title/Title";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
+import Card from "components/BlogCard/Card";
+import Title from "components/Title/Title";
 import { Cards, Container, Text } from "./styles";
 
 export default function Blog({ articles }) {

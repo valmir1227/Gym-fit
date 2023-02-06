@@ -5,7 +5,6 @@ import testimonials3 from "../../assets/testimonials-img-3.png";
 
 export const Container = styled.div`
   width: 100%;
-  //  Adaptar resp
   padding: 0 3rem;
   display: flex;
   justify-content: center;
@@ -21,7 +20,7 @@ export const Container = styled.div`
     font-size: 0.9rem;
     display: flex;
     cursor: pointer;
-    box-shadow: rgba(161, 7, 102, 0.2) 0px 8px 24px;
+    box-shadow: 0px 0px 18px -1px rgba(151, 87, 246, 0.6);
   }
 
   .card-text {

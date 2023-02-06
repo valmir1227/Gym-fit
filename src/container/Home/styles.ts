@@ -6,7 +6,7 @@ const Container = styled.section`
   width: 100vw;
   height: 90vh;
   background-image: url(${HeaderImage.src});
-  background-position: left;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -48,7 +48,7 @@ const Container = styled.section`
 
   @media ${device.mobileS} {
     padding: 1rem;
-    background-position: left;
+    background-position: right;
 
     div {
       padding: 1rem;
@@ -62,6 +62,8 @@ const Container = styled.section`
   }
 
   @media ${device.tablet} {
+    background-position: center;
+
     div {
       width: 40rem;
       padding: 0 3rem;

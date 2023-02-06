@@ -5,10 +5,12 @@ import { device } from "../../../styles/devices";
 export const Container = styled.footer`
   width: 100%;
   height: auto;
-  background: url(${FooterBg.src});
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: rgb(232, 120, 155);
+  background: linear-gradient(
+    180deg,
+    rgba(232, 120, 155, 1) 36%,
+    rgba(147, 88, 248, 1) 100%
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +41,7 @@ export const Form = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 1px 8px 3px rgba(228, 118, 160, 0.5);
+  box-shadow: 0px 0px 18px -1px rgba(151, 87, 246, 0.6);
   border-radius: 5px;
 
   div {
@@ -50,7 +52,9 @@ export const Form = styled.div`
     align-items: center;
     border-radius: 30px;
     position: relative;
-    box-shadow: 0px 2px 6px 1px rgba(228, 118, 160, 0.7);
+    box-shadow: 0px 0px 18px -1px rgba(151, 87, 246, 0.6);
+
+    cursor: pointer;
 
     input {
       width: 100%;
@@ -72,11 +76,11 @@ export const Form = styled.div`
       justify-content: center;
       align-items: center;
       border-radius: 100%;
-      background: #e476a0;
+      background: rgb(232, 120, 155);
       background: linear-gradient(
-        200deg,
-        rgba(228, 118, 160, 1) 0%,
-        #9a5bef 100%
+        -90deg,
+        rgba(232, 120, 155, 1) 40%,
+        rgba(147, 88, 248, 1) 100%
       );
       position: relative;
       img {

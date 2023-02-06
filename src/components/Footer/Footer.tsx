@@ -25,7 +25,9 @@ export default function Footer() {
         <div>
           <input type="email" placeholder="Your Email..." />
           <div>
-            <Image src={PaperPlane} alt="" />
+            <Link href="/contact">
+              <Image src={PaperPlane} alt="" />
+            </Link>
           </div>
         </div>
         <p>Get latest updates for latest courses</p>
@@ -40,23 +42,20 @@ export default function Footer() {
         </p>
         <nav>
           <Link href="/">
-            <li className="active">Home</li>
+            <li>Home</li>
           </Link>
-          <Link href="/">
-            <li>About us</li>
+          <Link href="/about">
+            <li>About</li>
           </Link>
 
-          <Link href="/">
+          <Link href="/courses">
             <li>Courses</li>
           </Link>
-          <Link href="/">
+          <Link href="/schedule">
             <li>Schedule</li>
           </Link>
-          <Link href="/">
+          <Link href="/blog">
             <li>Blog</li>
-          </Link>
-          <Link href="/">
-            <li>Pages</li>
           </Link>
         </nav>
         <p>
@@ -88,13 +87,19 @@ export default function Footer() {
       <SciContainer>
         <p>&copy; 2022 ValmirAlmeidaDev</p>
         <div>
-          <Link href="">
+          <Link
+            href="https://www.instagram.com/valmiralmeidadev/"
+            target="_blank"
+          >
             <Image src={InstagramImg} alt="" />
           </Link>
-          <Link href="">
+          <Link
+            href="https://www.facebook.com/valmir.almeida.5454/"
+            target="_blank"
+          >
             <Image src={FacebookImg} alt="" />
           </Link>
-          <Link href="">
+          <Link href="https://github.com/valmir1227" target="_blank">
             <Image src={GithubImg} alt="" />
           </Link>
         </div>

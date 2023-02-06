@@ -1,8 +1,8 @@
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
-import { Container } from "./styles";
 import { AiFillPlayCircle } from "react-icons/ai";
+import { Container } from "./styles";
 
 export default function Explore() {
   const [isOpen, setOpen] = useState(false);

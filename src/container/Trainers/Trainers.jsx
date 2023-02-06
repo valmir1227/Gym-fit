@@ -4,7 +4,6 @@ import { Cards, Container } from "./styles";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import "swiper/css";
 
 export default function Trainers({ trainers }) {
   return (
@@ -33,15 +32,12 @@ export default function Trainers({ trainers }) {
           breakpoints={{
             640: {
               slidesPerView: 1.5,
-              spaceBetween: 10,
             },
             768: {
               slidesPerView: 2,
-              spaceBetween: 20,
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 30,
             },
           }}
           modules={[Pagination, Autoplay]}
@@ -50,13 +46,13 @@ export default function Trainers({ trainers }) {
           {trainers.map((trainer) => (
             <SwiperSlide key={trainer.id}>
               <Card
-                role={trainer.data.role[0].text}
-                name={trainer.data.name[0].text}
-                image={trainer.data.profile.url}
-                instagram={trainer.data?.instagram?.url}
-                tiktok={trainer.data?.tiktok?.url}
-                facebook={trainer.data?.fcebook?.url}
-                description={trainer.data.description[0].text}
+                role={trainer.data?.role[0].text}
+                name={trainer.data?.name[0].text}
+                image={trainer.data?.profile.url}
+                instagram={trainer.data?.instagram.url}
+                tiktok={trainer.data?.tiktok.url}
+                facebook={trainer.data?.fcebook.url}
+                description={trainer.data?.description[0].text}
               />
             </SwiperSlide>
           ))}

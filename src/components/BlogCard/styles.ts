@@ -6,12 +6,11 @@ export const Container = styled.div`
   background: #fff;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: rgba(230, 32, 194, 0.25) 0px 5px 14px,
-    rgba(0, 0, 0, 0.22) 0px 1px 7px;
+  box-shadow: 0px 0px 18px -1px rgba(151, 87, 246, 0.6);
+
 
   &:hover {
-    box-shadow: rgba(230, 32, 194, 0.45) 0px 7px 16px,
-      rgba(0, 0, 0, 0.22) 0px 5px 7px;
+    box-shadow: 0px 0px 18px -1px rgba(151, 87, 246, 0.8);
 
     div img {
       filter: grayscale(1);
