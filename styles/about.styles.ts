@@ -8,7 +8,7 @@ export const Container = styled.section`
   color: #000;
 
   .courses-container {
-    background-colore
+    background: #fff;
   }
 `;
 
