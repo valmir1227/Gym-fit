@@ -10,7 +10,7 @@ export const Container = styled.section`
   }
 
   @media ${device.mobileS} {
-    padding: 1rem 1rem 7rem;
+    padding: 1rem;
   }
 
   @media ${device.tablet} {
@@ -18,7 +18,7 @@ export const Container = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 0 7rem 7rem;
+    padding: 0 6rem 6rem;
   }
 `;
 export const Text = styled.div`

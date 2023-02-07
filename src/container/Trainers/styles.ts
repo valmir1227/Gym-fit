@@ -9,12 +9,11 @@ export const Container = styled.section`
 
     p {
       color: #616797;
-      
     }
   }
 
   @media ${device.mobileS} {
-    padding: 0 1rem;
+    padding: 1rem;
   }
 
   @media ${device.tablet} {
@@ -22,7 +21,7 @@ export const Container = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 0 7rem;
+    padding: 0 6rem;
   }
 `;
 
@@ -30,6 +29,4 @@ export const Cards = styled.div`
   width: 100%;
   height: auto;
   margin-top: 3rem;
-
-
 `;

@@ -18,7 +18,7 @@ export const AboutContainer = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 3rem 7rem;
+    padding: 3rem 6rem;
     flex-wrap: nowrap;
   }
 
@@ -65,7 +65,7 @@ export const Text = styled.div`
   }
 
   @media ${device.mobileS} {
-    padding: 1rem 0;
+    padding: 1rem;
     width: 100%;
   }
 

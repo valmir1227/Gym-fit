@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "components/Button/styles";
 import Link from "next/link";
 import errorImg2 from "../assets/error-img-2.png";
-import { Container } from "../../styles/404.styles.ts";
+import { Container } from "../../styles/404.Styles";
 
 export default function Error404() {
   return (

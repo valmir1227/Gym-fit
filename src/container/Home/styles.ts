@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { device } from "../../../styles/devices";
 import HeaderImage from "../../assets/header-bg-img.png";
+import HeaderMobile from "../../assets/header-bg-mobile.png";
 
 const Container = styled.section`
   width: 100vw;
   height: 90vh;
-  background-image: url(${HeaderImage.src});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,7 +15,7 @@ const Container = styled.section`
     height: auto;
     position: absolute;
 
-    top: 50%;
+    top: 40%;
     transform: translateY(-40%);
     text-align: left;
 
@@ -49,6 +49,7 @@ const Container = styled.section`
   @media ${device.mobileS} {
     padding: 1rem;
     background-position: right;
+    background-image: url(${HeaderMobile.src});
 
     div {
       padding: 1rem;
@@ -62,6 +63,7 @@ const Container = styled.section`
   }
 
   @media ${device.tablet} {
+    background-image: url(${HeaderImage.src});
     background-position: center;
 
     div {
@@ -72,7 +74,7 @@ const Container = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 3rem 1rem;
+    padding: 3rem 6rem;
     div {
       width: 46.6rem;
 

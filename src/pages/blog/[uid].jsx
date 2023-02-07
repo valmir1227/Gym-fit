@@ -125,7 +125,7 @@ export const PostImg = styled.div`
     height: 300px;
   }
   @media ${device.tablet} {
-    height: 400px;
+    height: 500px;
   }
 `;
 

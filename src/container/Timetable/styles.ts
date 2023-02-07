@@ -15,7 +15,7 @@ export const Container = styled.section`
   }
 
   @media ${device.laptop} {
-    padding: 1rem 7rem 3rem;
+    padding: 1rem 6rem 3rem;
   }
 `;
 
