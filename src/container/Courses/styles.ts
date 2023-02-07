@@ -24,7 +24,7 @@ export const Container = styled.section`
   
 
   @media ${device.mobileS} {
-    padding: 3rem;
+    padding: 1rem;
   }
 `;
 
