@@ -54,7 +54,6 @@ export const Articles = styled.main`
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 1.3rem;
   margin-top: 3rem;
@@ -66,12 +65,10 @@ export const Articles = styled.main`
 
   @media ${device.tablet} {
     padding: 0 3rem 3em;
-    justify-content: center;
   }
 
   @media ${device.laptop} {
     padding: 0 3rem 3rem;
-    justify-content: flex-start;
   }
 `;
 

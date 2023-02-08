@@ -31,7 +31,7 @@ export default function Header() {
 
             <GlobalButton
               variant="primary"
-              href="/about"
+              href="/getin"
               text="Get in Toutch"
             />
           </nav>
@@ -63,7 +63,7 @@ export default function Header() {
                 </Link>
                 <GlobalButton
                   variant="primary"
-                  href="/get"
+                  href="/getin"
                   text="Get in Toutch"
                 />
               </nav>

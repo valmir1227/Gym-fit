@@ -55,7 +55,7 @@ export default function Courses() {
           title="Morbi commodo sapien at risus aliquam dapibus. Quisque ullamcorper ex non leo blandit porta."
         />
       </Cards>
-      <GlobalButton href="/" text="View More" variant="primary" />
+      <GlobalButton href="/courses" text="View More" variant="primary" />
     </Container>
   );
 }

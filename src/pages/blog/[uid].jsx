@@ -234,7 +234,7 @@ export async function getStaticProps({ params, previewData }) {
   const [article, latestArticles] = await Promise.all([
     client.getByUID("article", params.uid),
     client.getAllByType("article", {
-      limit: 6,
+      limit: 5,
       orderings: [
         { field: "my.article.publishDate", direction: "desc" },
         { field: "document.first_publication_date", direction: "desc" },

@@ -11,7 +11,7 @@ export default function Home() {
           tellus ut, faucibus nulla. Maecenas dictum neque velit, vitae porta
           arcu vehicula venenatis. Donec purus metus
         </p>
-        <GlobalButton variant="secondary" href="/" text="Read More" />
+        <GlobalButton variant="secondary" href="/about" text="Read More" />
       </div>
     </Container>
   );

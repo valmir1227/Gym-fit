@@ -1,6 +1,6 @@
 import Image from "next/image";
 import GlobalButton from "../../components/Button/Button";
-import aboutImg from "../../assets/about-img.png";
+import aboutImg from "../../assets/about.png";
 import { AboutContainer, ImageContainer, Text } from "./styles";
 
 export default function About() {
@@ -21,7 +21,7 @@ export default function About() {
           libero, at dapibus eros. In varius lacinia gravida. Aenean dignissim
           nulla nibh, a laoreet ligula fermentum sit amet.
         </p>
-        <GlobalButton variant="primary" href="/" text="Read More" />
+        <GlobalButton variant="primary" href="/about" text="Read More" />
       </Text>
       <ImageContainer>
         <Image src={aboutImg} alt="" />
