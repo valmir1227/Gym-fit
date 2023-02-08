@@ -13,9 +13,9 @@ import { MdEmail, MdPhone } from "react-icons/md";
 import PaperPlane from "../../assets/paper-plane.png";
 import FooterLogo from "../../assets/footer-logo.png";
 
-import FacebookImg from "../../assets/facebook.png";
-import InstagramImg from "../../assets/instagram.png";
-import GithubImg from "../../assets/github.png";
+import FacebookLogo from "../../assets/facebook.png";
+import InstagramLogo from "../../assets/instagram.png";
+import GithubLogo from "../../assets/github.png";
 
 export default function Footer() {
   return (
@@ -91,16 +91,16 @@ export default function Footer() {
             href="https://www.instagram.com/valmiralmeidadev/"
             target="_blank"
           >
-            <Image src={InstagramImg} alt="" />
+            <Image src={InstagramLogo} alt="" />
           </Link>
           <Link
             href="https://www.facebook.com/valmir.almeida.5454/"
             target="_blank"
           >
-            <Image src={FacebookImg} alt="" />
+            <Image src={FacebookLogo} alt="" />
           </Link>
           <Link href="https://github.com/valmir1227" target="_blank">
-            <Image src={GithubImg} alt="" />
+            <Image src={GithubLogo} alt="" />
           </Link>
         </div>
       </SciContainer>

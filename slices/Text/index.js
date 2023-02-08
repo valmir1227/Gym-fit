@@ -7,6 +7,7 @@ const Text = ({ slice }) => {
       {prismicH.isFilled.richText(slice.primary.text) && (
         <div>
           <PrismicRichText field={slice.primary.text} />
+          <br />
         </div>
       )}
     </div>
