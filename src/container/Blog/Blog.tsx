@@ -5,8 +5,28 @@ import Card from "components/BlogCard/Card";
 import Title from "components/Title/Title";
 import { Cards, Container, Text } from "./styles";
 
-export default function Blog({ articles }) {
-  const getExcertp = (text) => {
+interface Article {
+  id: string;
+  data: {
+    title: {
+      text: string;
+    }[];
+    firstPublicationDate: string;
+    image: {
+      url: string;
+    };
+    excerpt: {
+      text: string;
+    }[];
+  };
+}
+
+interface BlogProps {
+  articles: Article[];
+}
+
+export default function Blog({ articles }: BlogProps) {
+  const getExcerpt = (text: { excerpt: { text: string }[] }): string => {
     if (!text || !Array.isArray(text.excerpt) || !text.excerpt[0]?.text)
       return "";
     let finalExcerpt = text.excerpt[0].text.slice(0, 250);
@@ -58,7 +78,7 @@ export default function Blog({ articles }) {
           {articles.map((article) => (
             <SwiperSlide key={article.id} className="swiperArticle">
               <Card
-                content={getExcertp(article.data)}
+                content={getExcerpt(article.data)}
                 image={article.data?.image.url}
                 publishDate={article.data.firstPublicationDate}
                 title={article.data.title[0].text}

@@ -1,4 +1,3 @@
-import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import Link from "next/link";
 import facebookLogo from "../../assets/facebook.png";

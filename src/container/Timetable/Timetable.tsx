@@ -1,6 +1,6 @@
 import Title from "../../components/Title/Title";
 import TimeTableCard from "../../components/TimetableCard/Card";
-import { CardConTainer, Container, Text } from "./styles";
+import bodyBuilding from "../../assets/body-building.png";
 import weightLoss from "../../assets/size.png";
 import cardio from "../../assets/run.png";
 import yoga from "../../assets/yoga.png";
@@ -8,7 +8,7 @@ import body from "../../assets/body.png";
 import karate from "../../assets/karate.png";
 import boxing from "../../assets/boxing.png";
 import aerobics from "../../assets/aerobics.png";
-import bodyBuilding from "../../assets/body-building.png";
+import { CardConTainer, Container, Text } from "./styles";
 
 export default function Timetable() {
   return (

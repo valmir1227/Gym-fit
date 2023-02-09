@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-
-import { useEffect, useState } from "react";
-
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import { createClient } from "../../../prismicio";
+import { useEffect, useState } from "react";
+
 import {
   Articles,
   Container,

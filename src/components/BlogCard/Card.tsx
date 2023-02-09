@@ -4,7 +4,19 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { Container, Text } from "./styles";
 
-export default function Card({ image, publishDate, title, content }) {
+interface CardProps {
+  image: string;
+  publishDate: string;
+  title: string;
+  content: string;
+}
+
+export default function Card({
+  image,
+  publishDate,
+  title,
+  content,
+}: CardProps) {
   return (
     <Container>
       <Link href="/blog">

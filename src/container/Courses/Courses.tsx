@@ -1,11 +1,11 @@
 import Card from "../../components/CoursesCard/Card";
+import GlobalButton from "../../components/Button/Button";
+import Title from "../../components/Title/Title";
 import kettlebells from "../../assets/kettlebells.png";
 import courses3 from "../../assets/courses-img-3.png";
 import courses4 from "../../assets/courses-img-4.png";
 import courses5 from "../../assets/courses-img-5.png";
 import courses6 from "../../assets/courses-img-6.png";
-import GlobalButton from "../../components/Button/Button";
-import Title from "../../components/Title/Title";
 import { Cards, Container } from "./styles";
 
 export default function Courses() {

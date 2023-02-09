@@ -1,11 +1,41 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper";
 import Title from "../../components/Title/Title";
 import Card from "../../components/TrainersCard/Card";
 import { Cards, Container } from "./styles";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+interface Text {
+  text: string;
+}
 
-export default function Trainers({ trainers }) {
+interface URL {
+  url: string;
+}
+
+interface TrainerData {
+  name: Text[];
+  role: Text[];
+  profile: URL;
+  instagram: URL;
+  tiktok: URL;
+  fcebook: URL;
+  description: Text[];
+}
+
+interface Trainer {
+  id: string;
+  data: TrainerData;
+}
+
+interface TrainersProps {
+  trainers: Trainer[];
+}
+
+interface TrainersProps {
+  trainers: Trainer[];
+}
+
+export default function Trainers({ trainers }: TrainersProps) {
   return (
     <Container>
       <div>
